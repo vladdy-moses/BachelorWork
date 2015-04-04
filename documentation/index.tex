@@ -1,10 +1,17 @@
 \input{config/preamble}
 
+\newcommand\invisiblesection[1]{%
+\refstepcounter{section}%
+\addcontentsline{toc}{section}{\protect\numberline{\thesection}#1}%
+\sectionmark{#1}}
+
 \begin{document}
-	\maketitle
-	\tableofcontents
-	\newpage
-	
+	\input{chapters/title}
+	\input{chapters/task}
+	\input{chapters/abstract}
+	\input{chapters/contents}
+	\input{chapters/abbreviations}
+	\input{chapters/introduction}	
 	\input{chapters/economics}
 	
 	\begin{thebibliography}{99}
