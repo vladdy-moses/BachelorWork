@@ -1,0 +1,16 @@
+% Основной шрифт
+\setmainfont[Mapping=tex-text]{Times New Roman}
+% Моноширинный шрифт
+%\setmonofont[Scale=MatchLowercase]{Courier New}
+% Стандартные сочетания символов ---, --, << >> и т.п.
+\defaultfontfeatures{Mapping=tex-text}
+% Переносы в русских текстах
+\newfontfamily\russianfont{Times New Roman}
+% Перенос составных слов
+\XeTeXinterchartokenstate=1
+
+%\setmainfont[Mapping=tex-text]{GOST type A}
+
+% Устанавливаем шрифты "ГОСТ А" и "ГОСТ Б" в рамках ЕСКД
+\renewcommand{\ESKDfontShape}{\fontspec[BoldFont={GOST type B}]{GOST type A}}
+\renewcommand{\ESKDfontShape}{\fontspec[ItalicFont={GOST type A Italic}]{GOST type A Italic}}
