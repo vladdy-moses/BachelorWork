@@ -123,11 +123,11 @@
 Для регистрации подрядчика необходимы следующие данные, представленные в таблице\ref{tab:tech-orgfields}.
 
 \begin{footnotesize}
-\begin{longtable}[h]{|p{0.4\textwidth}|p{0.3\textwidth}|p{0.2\textwidth}|}
+\begin{longtable}[h]{|p{0.5\textwidth}|p{0.2\textwidth}|p{0.2\textwidth}|}
 	\caption{\label{tab:tech-orgfields}Необходимые поля подрядной организации} \\
 	\hline
-		\textbf{Название} & \textbf{Тип} & \textbf{Длина} \\
-	\hline
+		\textbf{Название поля} & \textbf{Тип} & \textbf{Длина} \\
+	\hline \endhead
 		Полное название организации & текстовый & 40 \\
 	\hline
 		Краткое название организации & текстовый & 40 \\
@@ -146,11 +146,11 @@
 Дополнительно могут требоваться заполнение сведений, расположенных в таблице~\ref{tab:tech-orgaddfields}.
 
 \begin{footnotesize}
-\begin{longtable}[h]{|p{0.4\textwidth}|p{0.3\textwidth}|p{0.2\textwidth}|}
-	\caption{\label{tab:tech-orgaddfields}Необходимые поля подрядной организации} \\
+\begin{longtable}[h]{|p{0.5\textwidth}|p{0.2\textwidth}|p{0.2\textwidth}|}
+	\caption{\label{tab:tech-orgaddfields}Дополнительные поля подрядной организации} \\
 	\hline
-		\textbf{Название} & \textbf{Тип} & \textbf{Длина} \\
-	\hline
+		\textbf{Название поля} & \textbf{Тип} & \textbf{Длина} \\
+	\hline \endhead
 		КПП & текстовый & 40 \\
 	\hline
 		Email организации & текстовый & 40 \\
@@ -184,17 +184,30 @@
 
 В информационной системе должен быть реализован механизм учёта сотрудников подрядной организации.
 
-Список сведений о сотруднике:
+Список сведений о сотруднике представлен в таблице~\ref{tab:tech-employeefields}.
 
-\begin{enumerate}
-	\item фамилия;
-	\item имя;
-	\item отчество;
-	\item должность;
-	\item является руководителем;
-	\item дата приёма на должность;
-	\item дата освобождения от должности.
-\end{enumerate}
+\begin{footnotesize}
+\begin{longtable}[h]{|p{0.5\textwidth}|p{0.2\textwidth}|p{0.2\textwidth}|}
+	\caption{\label{tab:tech-employeefields}Сведения о сотруднике} \\
+	\hline
+		\textbf{Название поля} & \textbf{Тип} & \textbf{Длина} \\
+	\hline \endhead
+		Фамилия & текстовый & 40 \\
+	\hline
+		Имя & текстовый & 40 \\
+	\hline
+		Отчество & текстовый & 40 \\
+	\hline
+		Должность & текстовый & 40 \\
+	\hline
+		Является руководителем & логический & 1 \\
+	\hline
+		Дата приёма на должность & дата & 6 \\
+	\hline
+		Дата освобождения от должности & дата & 6 \\
+	\hline
+\end{longtable}
+\end{footnotesize}
 
 Должность может быть выбрана из списка должностей ранее созданных записей сотрудников, а может быть создана новая.
 При создании новой должности её название должно начинаться с заглавной буквы, в ней не должно быть двойных пробелов.
@@ -204,7 +217,81 @@
 
 \subsubsection{Размещение конкурсов на проведение капитального ремонта}
 
-Work in process.
+В системе должна быть реализована возможность создания записей о конкурсах на капитальный ремонт.
+
+Сведения о конкурсе представлены в таблице~\ref{tab:tech-contestfields}.
+
+\begin{footnotesize}
+\begin{longtable}[h]{|p{0.5\textwidth}|p{0.2\textwidth}|p{0.2\textwidth}|}
+	\caption{\label{tab:tech-contestfields}Сведения о конкурсе} \\
+	\hline
+		\textbf{Название поля} & \textbf{Тип} & \textbf{Длина} \\
+	\hline \endfirsthead
+	\caption*{Продолжение таблицы \ref{tab:tech-contestfields}}\\
+	\hline
+		\textbf{Название поля} & \textbf{Тип} & \textbf{Длина} \\
+	\hline \endhead
+		Название & текстовый & 100 \\
+	\hline
+		Описание & текстовый & MAX \\
+	\hline
+		Дата публикации & дата & 6 \\
+	\hline
+		Дата начала приёма заявок & дата & 6 \\
+	\hline
+		Дата окончания приёма заявок & дата & 6 \\
+	\hline
+		Дата вскрытия конвертов & дата-время & 7 \\
+	\hline
+		Место вскрытия конвертов & текстовый & 200 \\
+	\hline
+		Является видимым подрядчикам & логический & 1 \\
+	\hline
+		Прикреплённый файл & бинарный & MAX \\
+	\hline
+		Является опубликованным в СМИ & логический & 1 \\
+	\hline
+		Название СМИ & текстовый & 100 \\
+	\hline
+		Номер периодики СМИ & текстовый & 10 \\
+	\hline
+		Число дней после закрытия конкурса, в течение которых должен быть заключен договор на капитальный ремонт & числовой & 4 \\
+	\hline
+		Дата внесения изменений & дата-время & 7 \\
+	\hline
+\end{longtable}
+\end{footnotesize}
+
+Конкурс может быть создан региональным оператором капитального ремонта.
+
+Конкурс создаётся невидимым подрядчикам.
+После заполнение информации хотя бы об одном лоте конкурс можно сделать видимым подрядчикам.
+
+На конкурс может быть прекрплено множество лотов.
+Сведения о лотах содержатся в таблице~\ref{tab:tech-lotfields}.
+
+\begin{footnotesize}
+\begin{longtable}[h]{|p{0.5\textwidth}|p{0.2\textwidth}|p{0.2\textwidth}|}
+	\caption{\label{tab:tech-lotfields}Сведения о лоте} \\
+	\hline
+		\textbf{Название поля} & \textbf{Тип} & \textbf{Длина} \\
+	\hline \endfirsthead
+	\caption*{Продолжение таблицы \ref{tab:tech-lotfields}}\\
+	\hline
+		\textbf{Название поля} & \textbf{Тип} & \textbf{Длина} \\
+	\hline \endhead
+		Название & текстовый & 100 \\
+	\hline
+		Описание & текстовый & MAX \\
+	\hline
+		Причина нерозыгрыша & текстовый & 255 \\
+	\hline
+		Прикреплённый файл & бинарный & MAX \\
+	\hline
+		Является разыгранным & логический & 1 \\
+	\hline
+\end{longtable}
+\end{footnotesize}
 
 \subsubsection{Розыгрыш конкурсов на проведение капитального ремонта}
 
