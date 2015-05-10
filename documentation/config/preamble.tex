@@ -39,3 +39,16 @@
 \ESKDdefaultTitleStyle{empty}
 
 \renewcommand{\ESKDtheTitleFieldX}{Ульяновск, 2015}
+
+% списочки
+\usepackage[shortlabels]{enumitem}
+\setlist[enumerate]{nosep}
+\AddEnumerateCounter{\Asbuk}{\@Asbuk}{\CYRM}
+\AddEnumerateCounter{\asbuk}{\@asbuk}{\cyrm}
+% \let\oldenumerate\enumerate
+% \renewcommand{\enumerate}{
+  % \oldenumerate
+  % \setlength{\itemsep}{1pt}
+  % \setlength{\parskip}{0pt}
+  % \setlength{\parsep}{0pt}
+% }
