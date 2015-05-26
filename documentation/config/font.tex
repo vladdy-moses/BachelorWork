@@ -6,8 +6,11 @@
 \defaultfontfeatures{Mapping=tex-text}
 % Переносы в русских текстах
 \newfontfamily\russianfont{Times New Roman}
-% Перенос составных слов
+% Для переноса составных слов
 \XeTeXinterchartokenstate=1
+\XeTeXcharclass `\- 24
+\XeTeXinterchartoks 24 0 ={\hskip0pt}
+\XeTeXinterchartoks 0 24 ={\nobreak}
 
 %\setmainfont[Mapping=tex-text]{GOST type A}
 
