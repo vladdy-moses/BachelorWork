@@ -17,6 +17,10 @@
 \usepackage{pdfpages} % для подключения pdf
 \input{config/font}
 
+% lists
+\usepackage[ampersand]{easylist}
+\ListProperties(Hide=100, Hang=true, Progressive=1.5cm, Style*=-- , Style2*=$\bullet$, Style3*=$\circ$, Style4*=\tiny$\blacksquare$ )
+
 \usepackage{ulem} % для умных подчёркиваний
 
 % информация о работе
@@ -47,7 +51,8 @@
 
 % списочки
 \usepackage[shortlabels]{enumitem}
-\setlist[enumerate]{nosep}
+%\setlist[enumerate]{nosep}
+\setlist[enumerate]{nosep,label=-}
 \AddEnumerateCounter{\Asbuk}{\@Asbuk}{\CYRM}
 \AddEnumerateCounter{\asbuk}{\@asbuk}{\cyrm}
 % \let\oldenumerate\enumerate
