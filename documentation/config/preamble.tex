@@ -5,15 +5,17 @@
 % таблицы
 \usepackage{longtable} 
 \usepackage{multirow}
+\usepackage{makecell} % для заголовков таблиц
+\newcommand{\theadnum}[1]{\makecell[c]{\footnotesize#1}}
+\renewcommand\theadfont{\bfseries}
 
-% шрифты
-\usepackage{polyglossia}
-\setdefaultlanguage{russian}
+% переносы
+\usepackage[T2A]{fontenc}
+\usepackage[russian]{babel}
 
 % борьба с "переносами" английских слов
 %\usepackage{ucharclasses}
-\usepackage{microtype} % better management of overfulls
-\setotherlanguages{english}
+% \usepackage{microtype} % better management of overfulls
 % \setTransitionsForLatin{\begingroup\hyphenrules{english}}{\endgroup}
 
 \usepackage{xecyr}
@@ -64,8 +66,8 @@
 
 % списочки
 \usepackage[shortlabels]{enumitem}
-%\setlist[enumerate]{nosep}
-\setlist[enumerate]{nosep,label=-}
+\setlist[enumerate]{nosep}
+%\setlist[enumerate]{nosep,label=-}
 \AddEnumerateCounter{\Asbuk}{\@Asbuk}{\CYRM}
 \AddEnumerateCounter{\asbuk}{\@asbuk}{\cyrm}
 % \let\oldenumerate\enumerate
