@@ -146,17 +146,90 @@
 
 \subsection{Разработка прикладного программного обеспечения}
 
-Work in process.
-
 \subsubsection{Структура прикладного программного обеспечения}
 
+Система состоит из двух подсистем: <<АРМ подрядной организации>>, делимый на модули открытой части и личного кабинета, и <<АРМ РОКР>>, в котором можно выделить модули отбора подрядчиков, продведения конкурсов и учёта договоров капитального ремонта.
+Данное дробление системы на подсистемы и модули было выбрано ввиду явного разделения функций системы согласно техническому заданию.
+
+Спецификация подсистемы <<АРМ подрядной организации>> представлена в таблице~\ref{tab:software-specArmContractor}.
+
+\begin{footnotesize}
+\begin{longtable}[h]{|p{0.05\textwidth}|p{0.3\textwidth}|p{0.55\textwidth}|}
+	\caption{\label{tab:software-specArmContractor}Спецификация подсистемы <<АРМ подрядной организации>>} \\
+	\hline
+		\thead{№} & \thead{Название компонента} & \thead{Описание} \\
+	\hline
+		\theadnum{1} & \theadnum{2} & \theadnum{3} \\
+	\hline \endfirsthead
+	\hline
+		 \theadnum{1} & \theadnum{2} & \theadnum{3} \\
+	\hline \endhead
+	\multicolumn{3}{|c|}{\textbf{Модули}} \\ \hline
+	1 & Open & Открытая часть портала, доступная любому пользователю. \\ \hline
+	2 & Personal & Личный кабинет подрядной организации. \\ \hline
+	\multicolumn{3}{|c|}{\textbf{Подключаемые компоненты}} \\ \hline
+	1 & AIS.HM.Model & Модель данных ИС <<Объектовый учёт>>. \\ \hline
+	2 & KendoUI & Библиотека графического интерфейса. Используется для отображение таблиц и фильтров. \\ \hline
+\end{longtable}
+\end{footnotesize}
+
+Спецификация подсистемы <<АРМ РОКР>> представлена в таблице~\ref{tab:software-specArmOperator}.
+
+\begin{footnotesize}
+\begin{longtable}[h]{|p{0.05\textwidth}|p{0.3\textwidth}|p{0.55\textwidth}|}
+	\caption{\label{tab:software-specArmOperator}Спецификация подсистемы <<АРМ РОКР>>} \\
+	\hline
+		\thead{№} & \thead{Название компонента} & \thead{Описание} \\
+	\hline
+		\theadnum{1} & \theadnum{2} & \theadnum{3} \\
+	\hline \endfirsthead
+	\hline
+		 \theadnum{1} & \theadnum{2} & \theadnum{3} \\
+	\hline \endhead
+	\multicolumn{3}{|c|}{\textbf{Модули}} \\ \hline
+	1 & ContractorRequest & Модуль отбора подрядчиков. \\ \hline
+	2 & Contest & Модуль проведения конкурсов. \\ \hline
+	2 & ContractOnWork & Модуль учёта договоров на капитальный ремонт. \\ \hline
+	\multicolumn{3}{|c|}{\textbf{Подключаемые компоненты}} \\ \hline
+	1 & AIS.HM.Model & Модель данных ИС <<Объектовый учёт>>. \\ \hline
+\end{longtable}
+\end{footnotesize}
+
+\subsubsection{Подсистема <<АРМ подрядной организации --- открытая часть>>}
+
+Спецификация подсистемы указана в таблице~\ref{tab:software-specArmContractorOpen}.
+
+\begin{footnotesize}
+\begin{longtable}[h]{|p{0.05\textwidth}|p{0.45\textwidth}|p{0.4\textwidth}|}
+	\caption{\label{tab:software-specArmContractorOpen}Спецификация модуля Open} \\
+	\hline
+		\thead{№} & \thead{Название и тип элемента} & \thead{Описание} \\
+	\hline
+		\theadnum{1} & \theadnum{2} & \theadnum{3} \\
+	\hline \endfirsthead
+	\hline
+		 \theadnum{1} & \theadnum{2} & \theadnum{3} \\
+	\hline \endhead
+	\multicolumn{3}{|c|}{\textbf{Модули}} \\ \hline
+	1 & 1 & 1. \\ \hline
+	\multicolumn{3}{|c|}{\textbf{Подключаемые компоненты}} \\ \hline
+	1 & 2 & 2 \\ \hline
+\end{longtable}
+\end{footnotesize}
+
+\subsubsection{Подсистема <<АРМ подрядной организации --- личный кабинет>>}
+
 Work in process.
 
-\subsubsection{Программный модуль <<АРМ подрядной организации>>}
+\subsubsection{Программный модуль <<АРМ РОКР --- Отбор подрядчиков>>}
 
 Work in process.
 
-\subsubsection{Программный модуль <<АРМ регионального оператора капитального ремонта>>}
+\subsubsection{Программный модуль <<АРМ РОКР --- Проведение конкурсов>>}
+
+Work in process.
+
+\subsubsection{Программный модуль <<АРМ РОКР --- Учёт договора на КР>>}
 
 Work in process.
 
