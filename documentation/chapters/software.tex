@@ -195,9 +195,9 @@
 \end{longtable}
 \end{footnotesize}
 
-\subsubsection{Подсистема <<АРМ подрядной организации --- открытая часть>>}
+\subsubsection{Программный модуль <<АРМ подрядной организации --- открытая часть>>}
 
-Спецификация подсистемы указана в таблице~\ref{tab:software-specArmContractorOpen}.
+Спецификация модуля указана в таблице~\ref{tab:software-specArmContractorOpen}.
 
 \begin{footnotesize}
 \begin{longtable}[h]{|p{0.05\textwidth}|p{0.45\textwidth}|p{0.4\textwidth}|}
@@ -210,16 +210,88 @@
 	\hline
 		 \theadnum{1} & \theadnum{2} & \theadnum{3} \\
 	\hline \endhead
-	\multicolumn{3}{|c|}{\textbf{Модули}} \\ \hline
-	1 & 1 & 1. \\ \hline
-	\multicolumn{3}{|c|}{\textbf{Подключаемые компоненты}} \\ \hline
-	1 & 2 & 2 \\ \hline
+	\multicolumn{3}{|c|}{\textbf{Классы-контроллеры}} \\ \hline
+	1 & public class AccountController & Содержит методы для авторизации и регистрации пользователей. \\ \hline
+	2 & public class BidController & Содержит методы для добавления заявки на КР. \\ \hline
+	3 & public class ContestController & Содержит методы для просмотра конкурсов. \\ \hline
+	4 & public class ContractController & Содержит методы для просмотра договоров на КР. \\ \hline
+	5 & public class CostEstimationController & Содержит методы для просмотра смет (планов работ). \\ \hline
+	6 & public class HomeController & Содержит методы для отображения главных страниц и страниц с ошибкой. \\ \hline
+	7 & public class LotController & Содержит методы для просмотра лотов. \\ \hline
+	8 & public class OrganizationController & Содержит методы для просмотра информации о подрядчике. \\ \hline
+	9 & public class PortfolioController & Содержит методы для просмотра портфолио подрядчика. \\ \hline
+	10 & public class StatsController & Содержит методы формирования статистики. \\ \hline
+	\multicolumn{3}{|c|}{\textbf{Классы для авторизации}} \\ \hline
+	1 & public class CheckFieldResult & Предоставляет результат заполнения полей при регистрации. \\ \hline
+	2 & public class LoginModel & Содержит список полей для страницы авторизации. \\ \hline
+	3 & public class PasswordModel & Содержит список полей для смены пароля. \\ \hline
+	4 & public class RegisterModel & Модель данных для первого этапа регистрации. \\ \hline
+	5 & public class RegisterSpecificModel & Модель данных для второго этапа регистрации. \\ \hline
+	6 & public sealed class UserPrincipal & Паспорт пользователя. \\ \hline
+	7 & public partial class UserIdentity & Идентификатор пользователя. \\ \hline
+	8 & public class AccountMembershipService & Сервис для авторизации и регистрации пользователя. \\ \hline
+	9 & public class FormsAuthenticationService & Сервис для аутентификации. \\ \hline
+	\multicolumn{3}{|c|}{\textbf{Классы для заявок}} \\ \hline
+	1 & public class BidRepository & Доступ к данным для списка заявок. \\ \hline
+	\multicolumn{3}{|c|}{\textbf{Классы для смет}} \\ \hline
+	1 & public class LotCostEstimationElement & Элемент агрегированной сметы по лоту \\ \hline
+	\multicolumn{3}{|c|}{\textbf{Классы для статистики}} \\ \hline
+	1 & public class StatsDataItem & Элемент статистики \\ \hline
+	2 & public class StatsHomeViewModel & Модель представления для статистики на главной странице. \\ \hline
 \end{longtable}
 \end{footnotesize}
 
-\subsubsection{Подсистема <<АРМ подрядной организации --- личный кабинет>>}
+Для каждого контроллера есть классы [имя]Filter, в котором содержатся поля для фильтрации записей, а также [имя]ViewModel, который представляет собой модель представления для страниц, формируемых при помощи соответствующего контроллера.
 
-Work in process.
+% Описание действий контроллеров:
+% \begin{enumerate}
+	% \item AccountController:
+	% \begin{enumerate}
+		% \item public ActionResult RegisterWelcome()
+		% \item public ActionResult RegisterGeneral()
+		% \item [HttpPost] public ActionResult RegisterGeneral(RegisterModel model)
+		% \item public ActionResult RegisterSpecific()
+		% \item [HttpPost] public ActionResult RegisterSpecific(RegisterSpecificModel model)
+		% \item public ActionResult RegisterPortfolio()
+		% \item public ActionResult RegisterSuccess()
+		% \item [HttpPost] public ActionResult Login()
+		% \item [HttpPost] public ActionResult Login(LoginModel model, string returnUrl)
+	% \end{enumerate}
+	% \item 2
+	% \item 3
+	% \item 4
+% \end{enumerate}
+
+\subsubsection{Программный модуль <<АРМ подрядной организации --- личный кабинет>>}
+
+Спецификация модуля указана в таблице~\ref{tab:software-specArmContractorPersonal}.
+
+\begin{footnotesize}
+\begin{longtable}[h]{|p{0.05\textwidth}|p{0.45\textwidth}|p{0.4\textwidth}|}
+	\caption{\label{tab:software-specArmContractorPersonal}Спецификация модуля Personal} \\
+	\hline
+		\thead{№} & \thead{Название и тип элемента} & \thead{Описание} \\
+	\hline
+		\theadnum{1} & \theadnum{2} & \theadnum{3} \\
+	\hline \endfirsthead
+	\hline
+		 \theadnum{1} & \theadnum{2} & \theadnum{3} \\
+	\hline \endhead
+	\multicolumn{3}{|c|}{\textbf{Классы-котроллеры}} \\ \hline
+	1 & public class AssociationController & Содержит методы для работы с СРО. \\ \hline
+	2 & public class BidController & Содержит методы для просмотра собственных заявок. \\ \hline
+	3 & public class ContractActualInfoController & Содержит методы для отчётности по работам капитального ремонта. \\ \hline
+	4 & public class ContractController & Содержит методы для работы с договорами на КР. \\ \hline
+	5 & public class EmployeeController & Содержит методы для учёта сотрудников. \\ \hline
+	6 & public class OrganizationController & Содержит методы для работы с информацией о подрядчике. \\ \hline
+	7 & public class PortfolioController & Содержит методы для работы с портфолио подрядчика. \\ \hline
+	8 & public class UserController & Содержит методы для доступа пользователей подрядчика к системе. \\ \hline
+	\multicolumn{3}{|c|}{\textbf{Классы для OrganizationController}} \\ \hline
+	1 & public class FillInfo & Элемент шкалы заполненности информации на главной странице личного кабинета. \\ \hline
+\end{longtable}
+\end{footnotesize}
+
+Для каждого контроллера есть классы [имя]Filter, в котором содержатся поля для фильтрации записей, а также [имя]ViewModel, который представляет собой модель представления для страниц, формируемых при помощи соответствующего контроллера.
 
 \subsubsection{Программный модуль <<АРМ РОКР --- Отбор подрядчиков>>}
 
