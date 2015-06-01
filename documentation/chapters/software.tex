@@ -295,15 +295,89 @@
 
 \subsubsection{Программный модуль <<АРМ РОКР --- Отбор подрядчиков>>}
 
-Work in process.
+Спецификация программного модуля представлена на таблице~\ref{tab:software-specArmRokrContractorRequest}.
+
+\begin{footnotesize}
+\begin{longtable}[h]{|p{0.05\textwidth}|p{0.45\textwidth}|p{0.4\textwidth}|}
+	\caption{\label{tab:software-specArmRokrContractorRequest}Спецификация модуля ContractorRequest} \\
+	\hline
+		\thead{№} & \thead{Название и тип элемента} & \thead{Описание} \\
+	\hline
+		\theadnum{1} & \theadnum{2} & \theadnum{3} \\
+	\hline \endfirsthead
+	\hline
+		 \theadnum{1} & \theadnum{2} & \theadnum{3} \\
+	\hline \endhead
+	\multicolumn{3}{|c|}{\textbf{Классы-контроллеры}} \\ \hline
+	1 & public class ContractorRequestController & Содержит методы для отбора подрядных организаций. \\ \hline
+	\multicolumn{3}{|c|}{\textbf{Методы класса ContractorRequestController}} \\ \hline
+	1 & public ActionResult ListForOperator (ContractorRequestFilterModel filter) & Отображает список заявок на одобрение для РОКР. \\ \hline
+	2 & public ActionResult Edit (int? id, ContractorRequestFilterModel filter) & Отображает страницу одобрения заявки. \\ \hline
+	3 & [HttpPost] public ActionResult Edit (int? id, ContractorRequestFilterModel filter, int? status) & Одобряет заявку подрядчика. \\ \hline
+\end{longtable}
+\end{footnotesize}
 
 \subsubsection{Программный модуль <<АРМ РОКР --- Проведение конкурсов>>}
 
-Work in process.
+Спецификация программного модуля представлена на таблице~\ref{tab:software-specArmRokrContest}.
+
+\begin{footnotesize}
+\begin{longtable}[h]{|p{0.05\textwidth}|p{0.45\textwidth}|p{0.4\textwidth}|}
+	\caption{\label{tab:software-specArmRokrContest}Спецификация модуля Contest} \\
+	\hline
+		\thead{№} & \thead{Название и тип элемента} & \thead{Описание} \\
+	\hline
+		\theadnum{1} & \theadnum{2} & \theadnum{3} \\
+	\hline \endfirsthead
+	\hline
+		 \theadnum{1} & \theadnum{2} & \theadnum{3} \\
+	\hline \endhead
+	\multicolumn{3}{|c|}{\textbf{Классы-контроллеры}} \\ \hline
+	1 & public class ContestController & Содержит методы для работы с конкурсами. \\ \hline
+	2 & public class ContractorController & Содержит методы для работы с подрядчиками. \\ \hline
+	3 & public class CostEstimationController & Содержит методы для работы с лотами и сметами. \\ \hline
+	4 & public class BidController & Содержит методы для работы с заявками. \\ \hline
+	% \multicolumn{3}{|c|}{\textbf{Методы класса ContractorRequestController}} \\ \hline
+	% 1 & public ActionResult ListForOperator (ContractorRequestFilterModel filter) & Отображает список заявок на одобрение для РОКР. \\ \hline
+	% 2 & public ActionResult Edit (int? id, ContractorRequestFilterModel filter) & Отображает страницу одобрения заявки. \\ \hline
+	% 3 & [HttpPost] public ActionResult Edit (int? id, ContractorRequestFilterModel filter, int? status) & Одобряет заявку подрядчика. \\ \hline
+\end{longtable}
+\end{footnotesize}
 
 \subsubsection{Программный модуль <<АРМ РОКР --- Учёт договора на КР>>}
 
-Work in process.
+Спецификация программного модуля представлена на таблице~\ref{tab:software-specArmRokrContractOnWork}.
+
+\begin{footnotesize}
+\begin{longtable}[h]{|p{0.05\textwidth}|p{0.45\textwidth}|p{0.4\textwidth}|}
+	\caption{\label{tab:software-specArmRokrContractOnWork}Спецификация модуля ContractOnWork} \\
+	\hline
+		\thead{№} & \thead{Название и тип элемента} & \thead{Описание} \\
+	\hline
+		\theadnum{1} & \theadnum{2} & \theadnum{3} \\
+	\hline \endfirsthead
+	\hline
+		 \theadnum{1} & \theadnum{2} & \theadnum{3} \\
+	\hline \endhead
+	\multicolumn{3}{|c|}{\textbf{Классы-контроллеры}} \\ \hline
+	1 & public class ContractOnWorkController & Содержит методы для работы с договорами на КР. \\ \hline
+	\multicolumn{3}{|c|}{\textbf{Методы класса ContractOnWorkController}} \\ \hline
+	1 & public ActionResult TotalLots (ContractOnWorkFiltrerModel filter) & Отображает список договоров на КР. \\ \hline
+	2 & public ActionResult EditContractOnWork (ContractOnWorkFiltrerModel filter, int id, bool isEdit) & Изменяет договор на КР. \\ \hline
+	4 & public ActionResult ContractHistoryList (ContractOnWorkFiltrerModel filter, int id) & Список истории состояний договора на КР. \\ \hline
+	5 & public ActionResult ContractDetails (ContractOnWorkFiltrerModel filter, int id) & Подробности договора на КР. \\ \hline
+	6 & public ActionResult ConfirmContractPlan (ContractOnWorkFiltrerModel filter, int id) & Подтвердить плановые показатели. \\ \hline
+	8 & public ActionResult ConfirmContractFact (ContractOnWorkFiltrerModel filter, int id) & Подтвердить фактические показатели. \\ \hline
+	10 & public ActionResult ContractWorkTypeList (ContractOnWorkFiltrerModel filter) & Список видов работ. \\ \hline
+	11 & public ActionResult ContractWorkTypeEdit (ContractOnWorkFiltrerModel filter, int? id) & Изменение вида работ. \\ \hline
+	13 & public ActionResult ContractWorkTypeDelete (ContractOnWorkFiltrerModel filter, int id) & Удаление вида работ. \\ \hline
+	14 & public ActionResult ElementDetails (ContractOnWorkFiltrerModel filter, int id) & Подробности элемента договора на КР. \\ \hline
+	15 & public ActionResult EditReportDocuments (ContractOnWorkFiltrerModel filter, int id) & Изменение отчётных документов по КР. \\ \hline
+	16 & public ActionResult ChangeStatus (ContractOnWorkFiltrerModel filter, int id) & Смена статуса договора на КР. \\ \hline
+	17 & public ActionResult EditElementPlan (ContractOnWorkFiltrerModel filter, int? id, int contractElementId, int ElementId) & Изменить элемент плановых показателей. \\ \hline
+	18 & public ActionResult EditElementFact (ContractOnWorkFiltrerModel filter, int? id, int contractElementId, int ElementId) & Изменить элемент фактических показателей. \\ \hline
+\end{longtable}
+\end{footnotesize}
 
 \subsection{Разработка инструментального средства тестирования}
 
