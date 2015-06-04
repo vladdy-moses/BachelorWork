@@ -2,7 +2,7 @@
 
 \subsection{Назначение и цели создания системы}
 
-Разрабатываемая информационная система должна быть предназначена для учёта заявок на выполнение подрядных работ по капитальному ремонту в субъекте федерации и проведению их розыгрыша, а также ведению отчётности по выполненным работам.
+Разрабатываемая информационная система должна быть предназначена для\linebreak учёта заявок на выполнение подрядных работ по капитальному ремонту в субъекте федерации и проведению их розыгрыша, а также ведению отчётности по выполненным работам.
 
 Основными целями создания системы являются:
 
@@ -112,7 +112,7 @@
 Персонал, работающий с информационной системой, должен обладать навыками работы за компьютером и использования интернет-обозревателя.
 
 Система должна быть эргономичной.
-Графический интерфейс пользователя должен отвечать современным требованиям к оформлению веб-сайтов, а также внутренним соглашениям по оформлению программных продуктов, принятым в ООО <<АИС Город>>.
+Графический интерфейс пользователя\linebreak должен отвечать современным требованиям к оформлению веб-сайтов, а также внутренним соглашениям по оформлению программных продуктов, принятым в ООО <<АИС Город>>.
 
 \subsection{Требования к функциям, выполняемым системой}
 
@@ -121,13 +121,18 @@
 В системе должна быть реализована процедура регистрации подрядной организации.
 Регистрация может проходить как самостоятельно, так и региональным оператором капитального ремонта.
 
-Для регистрации подрядчика необходимы следующие данные, представленные в табл.\ref{tab:tech-orgfields}.
+Для регистрации подрядчика необходимы следующие данные, представленные в таблице \ref{tab:tech-orgfields}.
 
 \begin{footnotesize}
 \begin{longtable}[h]{|p{0.5\textwidth}|p{0.2\textwidth}|p{0.2\textwidth}|}
 	\caption{\label{tab:tech-orgfields}Необходимые поля подрядной организации} \\
 	\hline
-		\textbf{Название поля} & \textbf{Тип} & \textbf{Длина} \\
+		\thead{Название поля} & \thead{Тип} & \thead{Длина} \\
+	\hline
+		\theadnum{1} & \theadnum{2} & \theadnum{3} \\
+	\hline \endfirsthead
+	\hline
+		\theadnum{1} & \theadnum{2} & \theadnum{3} \\
 	\hline \endhead
 		Полное название организации & текстовый & 500 \\
 	\hline
@@ -144,13 +149,18 @@
 \end{longtable}
 \end{footnotesize}
 
-Дополнительно могут требоваться заполнение сведений, расположенных в табл.~\ref{tab:tech-orgaddfields}.
+Дополнительно могут требоваться заполнение сведений, расположенных в таблице~\ref{tab:tech-orgaddfields}.
 
 \begin{footnotesize}
 \begin{longtable}[h]{|p{0.5\textwidth}|p{0.2\textwidth}|p{0.2\textwidth}|}
 	\caption{\label{tab:tech-orgaddfields}Дополнительные поля подрядной организации} \\
 	\hline
-		\textbf{Название поля} & \textbf{Тип} & \textbf{Длина} \\
+		\thead{Название поля} & \thead{Тип} & \thead{Длина} \\
+	\hline
+		\theadnum{1} & \theadnum{2} & \theadnum{3} \\
+	\hline \endfirsthead
+	\hline
+		\theadnum{1} & \theadnum{2} & \theadnum{3} \\
 	\hline \endhead
 		КПП & текстовый & 20 \\
 	\hline
@@ -185,13 +195,18 @@
 
 В информационной системе должен быть реализован механизм учёта сотрудников подрядной организации.
 
-Список сведений о сотруднике представлен в табл.~\ref{tab:tech-employeefields}.
+Список сведений о сотруднике представлен в таблице~\ref{tab:tech-employeefields}.
 
 \begin{footnotesize}
 \begin{longtable}[h]{|p{0.5\textwidth}|p{0.2\textwidth}|p{0.2\textwidth}|}
 	\caption{\label{tab:tech-employeefields}Сведения о сотруднике} \\
 	\hline
-		\textbf{Название поля} & \textbf{Тип} & \textbf{Длина} \\
+		\thead{Название поля} & \thead{Тип} & \thead{Длина} \\
+	\hline
+		\theadnum{1} & \theadnum{2} & \theadnum{3} \\
+	\hline \endfirsthead
+	\hline
+		\theadnum{1} & \theadnum{2} & \theadnum{3} \\
 	\hline \endhead
 		Фамилия & текстовый & 100 \\
 	\hline
@@ -220,17 +235,18 @@
 
 В системе должна быть реализована возможность создания записей о конкурсах на капитальный ремонт.
 
-Сведения о конкурсе представлены в табл.~\ref{tab:tech-contestfields}.
+Сведения о конкурсе представлены в таблице~\ref{tab:tech-contestfields}.
 
 \begin{footnotesize}
 \begin{longtable}[h]{|p{0.5\textwidth}|p{0.2\textwidth}|p{0.2\textwidth}|}
 	\caption{\label{tab:tech-contestfields}Сведения о конкурсе} \\
 	\hline
-		\textbf{Название поля} & \textbf{Тип} & \textbf{Длина} \\
-	\hline \endfirsthead
-	\caption*{Продолжение таблицы \ref{tab:tech-contestfields}}\\
+		\thead{Название поля} & \thead{Тип} & \thead{Длина} \\
 	\hline
-		\textbf{Название поля} & \textbf{Тип} & \textbf{Длина} \\
+		\theadnum{1} & \theadnum{2} & \theadnum{3} \\
+	\hline \endfirsthead
+	\hline
+		\theadnum{1} & \theadnum{2} & \theadnum{3} \\
 	\hline \endhead
 		Название & текстовый & 100 \\
 	\hline
@@ -269,17 +285,18 @@
 После заполнение информации хотя бы об одном лоте конкурс можно сделать видимым подрядчикам.
 
 На конкурс может быть прикреплено множество лотов.
-Сведения о лотах содержатся в табл.~\ref{tab:tech-lotfields}.
+Сведения о лотах содержатся в таблице~\ref{tab:tech-lotfields}.
 
 \begin{footnotesize}
 \begin{longtable}[h]{|p{0.5\textwidth}|p{0.2\textwidth}|p{0.2\textwidth}|}
 	\caption{\label{tab:tech-lotfields}Сведения о лоте} \\
 	\hline
-		\textbf{Название поля} & \textbf{Тип} & \textbf{Длина} \\
-	\hline \endfirsthead
-	\caption*{Продолжение таблицы \ref{tab:tech-lotfields}}\\
+		\thead{Название поля} & \thead{Тип} & \thead{Длина} \\
 	\hline
-		\textbf{Название поля} & \textbf{Тип} & \textbf{Длина} \\
+		\theadnum{1} & \theadnum{2} & \theadnum{3} \\
+	\hline \endfirsthead
+	\hline
+		\theadnum{1} & \theadnum{2} & \theadnum{3} \\
 	\hline \endhead
 		Название & текстовый & 100 \\
 	\hline
@@ -329,17 +346,18 @@
 Данный лот должен являться частью действующего конкурса.
 Действующим конкурсом считается конкурс, дата начала приёма заявок не позже сегодня, а дата окончания приёма заявок не раньше сегодня.
 
-Список сведений в заявке представлен в табл.~\ref{tab:tech-bidfields}.
+Список сведений в заявке представлен в таблице~\ref{tab:tech-bidfields}.
 
 \begin{footnotesize}
 \begin{longtable}[h]{|p{0.5\textwidth}|p{0.2\textwidth}|p{0.2\textwidth}|}
 	\caption{\label{tab:tech-bidfields}Сведения о заявке на розыгрыш лота} \\
 	\hline
-		\textbf{Название поля} & \textbf{Тип} & \textbf{Длина} \\
-	\hline \endfirsthead
-	\caption*{Продолжение таблицы \ref{tab:tech-bidfields}}\\
+		\thead{Название поля} & \thead{Тип} & \thead{Длина} \\
 	\hline
-		\textbf{Название поля} & \textbf{Тип} & \textbf{Длина} \\
+		\theadnum{1} & \theadnum{2} & \theadnum{3} \\
+	\hline \endfirsthead
+	\hline
+		\theadnum{1} & \theadnum{2} & \theadnum{3} \\
 	\hline \endhead
 		Комментарий подрядчика & текстовый & MAX \\
 	\hline

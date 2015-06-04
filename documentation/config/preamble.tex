@@ -20,6 +20,7 @@
 % переносы
 %\usepackage[T2A]{fontenc}
 \usepackage[russian]{babel}
+\hyphenation{УлГТУ}
 
 % борьба с "переносами" английских слов
 %\usepackage{ucharclasses}
@@ -35,14 +36,19 @@
 
 
 % отступы
-% \ESKDsectSkip{section}{4em}{4em}
-% \ESKDsectSkip{subsection}{3em}{2em}
+\ESKDsectSkip{section}{4em}{4em}
+\ESKDsectSkip{subsection}{3em}{2em}
+\ESKDsectSkip{subsubsection}{2em}{2em}
+\setlength\parindent{1cm} 
+
+% интервалы
+\renewcommand{\baselinestretch}{1.5}
 
 \ESKDsectStyle{section}{\bfseries\Large\centering\MakeUppercase}
 
 % lists
 \usepackage[ampersand]{easylist}
-\ListProperties(Hide=100, Hang=true, Progressive=1.5cm, Style*=-- , Style2*=$\bullet$, Style3*=$\circ$, Style4*=\tiny$\blacksquare$ )
+\ListProperties(Hide=100, Hang=true, Progressive=1cm, Style*=-- , Style2*=$\bullet$, Style3*=$\circ$, Style4*=\tiny$\blacksquare$ )
 
 \usepackage{ulem} % для умных подчёркиваний
 
@@ -74,14 +80,14 @@
 
 % списочки
 \usepackage[shortlabels]{enumitem}
-\setlist[enumerate]{nosep}
+\setlist[enumerate]{nosep,leftmargin=1.7cm}
 %\setlist[enumerate]{nosep,label=-}
 \AddEnumerateCounter{\Asbuk}{\@Asbuk}{\CYRM}
 \AddEnumerateCounter{\asbuk}{\@asbuk}{\cyrm}
-% \let\oldenumerate\enumerate
-% \renewcommand{\enumerate}{
-  % \oldenumerate
-  % \setlength{\itemsep}{1pt}
-  % \setlength{\parskip}{0pt}
-  % \setlength{\parsep}{0pt}
-% }
+
+\newlength{\wideitemsep}
+\setlength{\wideitemsep}{1.5\itemsep}
+%\addtolength{\wideitemsep}{-10pt}
+\let\olditem\item
+\renewcommand{\item}{\setlength{\parsep}{100pt}\olditem}
+
