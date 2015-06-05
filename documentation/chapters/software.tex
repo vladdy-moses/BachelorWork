@@ -16,16 +16,15 @@
 \begin{longtable}[h]{|p{0.3\textwidth}|p{0.2\textwidth}|p{0.2\textwidth}|p{0.2\textwidth}|}
 	\caption{\label{tab:software-language}Сравнительных анализ языков программирования веб-ориентированных ИС} \\
 	\hline
-		\textbf{Критерий} &
-		\textbf{PHP} &
-		\textbf{Ruby} &
-		\textbf{C\#} \\
+		\thead{Критерий} &
+		\thead{PHP} &
+		\thead{Ruby} &
+		\thead{C\#} \\
+	\hline
+		\theadnum{1} & \theadnum{2} & \theadnum{3} & \theadnum{4} \\
 	\hline \endfirsthead
 	\hline
-		\textbf{Критерий} &
-		\textbf{PHP} &
-		\textbf{Ruby} &
-		\textbf{C\#} \\
+		 \theadnum{1} & \theadnum{2} & \theadnum{3} & \theadnum{4} \\
 	\hline \endhead
 	Скорость формирования страницы & 
 	средне & медленно & быстро \\ \hline
@@ -60,14 +59,14 @@
 \begin{longtable}[h]{|p{0.5\textwidth}|p{0.2\textwidth}|p{0.2\textwidth}|}
 	\caption{\label{tab:software-sharpide}Сравнительный анализ средств разработки на C\#} \\
 	\hline
-		\textbf{Критерий} &
-		\textbf{Visual Studio} &
-		\textbf{Xamarin} \\
+		\thead{Критерий} &
+		\thead{Visual Studio} &
+		\thead{Xamarin} \\
+	\hline
+		\theadnum{1} & \theadnum{2} & \theadnum{3} \\
 	\hline \endfirsthead
 	\hline
-		\textbf{Критерий} &
-		\textbf{Visual Studio} &
-		\textbf{Xamarin} \\
+		 \theadnum{1} & \theadnum{2} & \theadnum{3} \\
 	\hline \endhead
 	Подсветка синтаксиса & 
 	есть & есть \\ \hline
@@ -442,17 +441,7 @@
 Некоторые поля могут проверяться на сервере на наличие дублей или же на иные условия.
 Для успешного продолжения регистрации в эти поля должны быть введены корректные данные, иначе возникнет всплывающее сообщение, указывающее на ошибку.
 
-\begin{figure}[h!]
-	\begin{center}
-		\begin{minipage}[h]{\linewidth}
-			\centering
-			\includegraphics[width=\linewidth]{images/software-contractorRegistration.png}
-			\caption{Страница заполнения основной информации при регистрации подрядчика}
-			\label{img:software-contractorRegistration}
-		\end{minipage}
-		\hfill
-	\end{center}
-\end{figure}
+\myFigure{1.0}{software-contractorRegistration}{Страница заполнения основной информации при регистрации подрядчика}
 
 После заполнения основной информации можно заполнить сведения о руководителе, членстве в СРО, заполнить графическое портфолио.
 
@@ -463,17 +452,7 @@
 Для того, чтобы подать заявку на одобрение подрядной организации региональным оператором капитального ремонта, следует зайти в личный кабинет (соответствующая ссылка в шапке сайта), перейти в меню второго уровня <<Заявки в РОКР>> и нажать на кнопку <<Подать заявку>>.
 Схематично этот процесс показан на рисунке~\ref{img:software-contractorRequest}.
 
-\begin{figure}[h!]
-	\begin{center}
-		\begin{minipage}[h]{\linewidth}
-			\centering
-			\includegraphics[width=\linewidth]{images/software-contractorRequest.png}
-			\caption{Процесс подачи заявки на одобрение РОКР}
-			\label{img:software-contractorRequest}
-		\end{minipage}
-		\hfill
-	\end{center}
-\end{figure}
+\myFigure{1.0}{software-contractorRequest}{Процесс подачи заявки на одобрение РОКР}
 
 \paragraph{Участие в розыгрыше}
 
@@ -487,17 +466,7 @@
 При нажатии на одну из этих кнопок откроется страница подачи заявки на участие в розыгрыше права выпронять капитальный ремонт.
 Примерное изображение страницы подачи заявки представлено на рисунке~\ref{img:software-contractorBid}.
 
-\begin{figure}[h!]
-	\begin{center}
-		\begin{minipage}[h]{\linewidth}
-			\centering
-			\includegraphics[width=\linewidth]{images/software-contractorBid.png}
-			\caption{Страница подачи заявки на розыгрыш права проводить капитальный ремонт}
-			\label{img:software-contractorBid}
-		\end{minipage}
-		\hfill
-	\end{center}
-\end{figure}
+\myFigure{1.0}{software-contractorBid}{Страница подачи заявки на розыгрыш права проводить капитальный ремонт}
 
 \paragraph{Одобрение подрядчика}
 
@@ -509,32 +478,12 @@
 На появившейся странице следует ввести статус заявки и комментарий, если она отклонена.
 Изображение страницы изменения статуса заявки представлено на рисунке~\ref{img:software-hmRequest}.
 
-\begin{figure}[h!]
-	\begin{center}
-		\begin{minipage}[h]{\linewidth}
-			\centering
-			\includegraphics[width=\linewidth]{images/software-hmRequest.png}
-			\caption{Страница одобрения заявки подрядчика}
-			\label{img:software-hmRequest}
-		\end{minipage}
-		\hfill
-	\end{center}
-\end{figure}
+\myFigure{1.0}{software-hmRequest}{Страница одобрения заявки подрядчика}
 
 Также при изменении заявки у подрядчика в личном кабинете появится уведомление об изменении статуса заявки на одобрение.
 Пример уведомления об одобрении подрядчика показан на рисунке~\ref{img:software-contractorRequestNotify}.
 
-\begin{figure}[h!]
-	\begin{center}
-		\begin{minipage}[h]{\linewidth}
-			\centering
-			\includegraphics[width=\linewidth]{images/software-contractorRequestNotify.png}
-			\caption{Уведомление об одобрении подрядчика}
-			\label{img:software-contractorRequestNotify}
-		\end{minipage}
-		\hfill
-	\end{center}
-\end{figure}
+\myFigure{0.8}{software-contractorRequestNotify}{Уведомление об одобрении подрядчика}
 
 \paragraph{Создание конкурса}
 
@@ -571,43 +520,13 @@
 Для первого типа предусмотрена страница с текстом о том, что запрашиваемая страница не найдена.
 На площадке подрядчиков вид такой страницы представлен на рисунке~\ref{img:software-contractorNotFound}.
 
-\begin{figure}[h!]
-	\begin{center}
-		\begin{minipage}[h]{\linewidth}
-			\centering
-			\includegraphics[width=\linewidth]{images/software-contractorNotFound.png}
-			\caption{Страница при неправильной ссылке на площадке подрядчиков}
-			\label{img:software-contractorNotFound}
-		\end{minipage}
-		\hfill
-	\end{center}
-\end{figure}
+\myFigure{1.0}{software-contractorNotFound}{Страница при неправильной ссылке на площадке подрядчиков}
 
 Второй и третий вид исключительных ситуаций могут либо выдавать блок с ошибкой в верхней части основной области страницы (как на рисунке~\ref{img:software-contractorErrorTop}) или отображать специальную страницу с ошибкой (как на рисунке~\ref{img:software-contractorErrorAll}).
 
-\begin{figure}[h!]
-	\begin{center}
-		\begin{minipage}[h]{\linewidth}
-			\centering
-			\includegraphics[width=\linewidth]{images/software-contractorErrorTop.png}
-			\caption{Блок ошибки на площадке подрядчиков}
-			\label{img:software-contractorErrorTop}
-		\end{minipage}
-		\hfill
-	\end{center}
-\end{figure}
+\myFigure{1.0}{software-contractorErrorTop}{Блок ошибки на площадке подрядчиков}
 
-\begin{figure}[h!]
-	\begin{center}
-		\begin{minipage}[h]{\linewidth}
-			\centering
-			\includegraphics[width=\linewidth]{images/software-contractorErrorAll.png}
-			\caption{Страница ошибки на площадке подрядчиков}
-			\label{img:software-contractorErrorAll}
-		\end{minipage}
-		\hfill
-	\end{center}
-\end{figure}
+\myFigure{1.0}{software-contractorErrorAll}{Страница ошибки на площадке подрядчиков}
 
 \clearpage
 \newpage
