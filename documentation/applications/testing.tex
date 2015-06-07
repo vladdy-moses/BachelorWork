@@ -1,0 +1,97 @@
+\ESKDappendix{справочное}{Текст инструментального средства тестирования}
+\label{app:testing}
+
+\begin{lstlisting}
+console.log('WEBSHOT MAKER for AIS.HM.Contractor ver 0.02');
+console.log('===================================================');
+
+var pages = [];
+var page = require('webpage').create();
+var fileBase = 'screens/';
+page.viewportSize = {
+  width: 1280,
+  height: 1024
+};
+addPage = function(url, file) {
+  pages.push({ url: url, file: file });
+};
+
+//AIS.HM.Contractor config
+var pageBase = 'http://localhost:25656/';
+var registerPage = 'Account/Register';
+var loginData = {
+  page: 'Account/Login',
+  loginField: 'Login',
+  passwordField: 'Password',
+  loginData: 'testUser',
+  passwordData: 'testUserUser'
+};
+addPage('Home/Index', 'Home');
+addPage('Contest/List', 'ContestList');
+addPage('Contest/List?HotContest=True', 'ContestListHot');
+addPage('Contest/Details/26', 'ContestDetails');
+addPage('Lot/Details/3', 'LotDetails');
+addPage('Bid/List/3', 'BidList');
+addPage('Organization/List', 'OrganizationList');
+addPage('Organization/Details/1', 'OrganizationDetails');
+addPage('Portfolio/List/1', 'PortfolioList');
+addPage('Private', 'Private');
+addPage('Private/Edit', 'PrivateEdit');
+addPage('Private/RequestList', 'PrivateRequestList');
+addPage('User/List', 'UserList');
+addPage('Employee/List', 'EmployeeList');
+addPage('Association/List', 'AssociationList');
+addPage('Bid/OwnList', 'BidOwnList');
+addPage('Private/Favorites', 'PrivateFavorites');
+addPage('Stats', 'Stats');
+addPage('Portfolio/Edit', 'PortfolioEdit');
+addPage('User/Edit', 'UserEdit');
+addPage('Employee/Edit', 'EmployeeEdit');
+addPage('Association/Edit', 'AssociationEdit');
+addPage('Bid/Add/6', 'BidAdd');
+
+addPage = function(url, file) {
+  pages.push({ url: url, file: file });
+};
+
+getPage = function(url, type, data, file, callback) {
+  page.open(url, type, data, function(status) {
+    if(status === 'success') {
+      page.render(fileBase + file + '.png');
+    }
+    callback(status);
+  });
+};
+
+login = function(callback) { 
+  getPage(pageBase + loginData.page, 'post', loginData.loginField + '=' + loginData.loginData + '&' + loginData.passwordField + '=' + loginData.passwordData, 'login', callback);
+};
+
+run = function() {
+  var item = pages.pop();
+  if (item != null) {
+    getPage(pageBase + item.url, 'get', null, item.file, function(status) {
+      console.log(item.url + ': ' + status);
+      run();
+    });
+  } else {
+    exit();
+  }
+};
+
+exit = function() {
+  console.log('===================================================');
+  console.log('Exit from script');
+  page.close();
+  phantom.exit();
+};
+
+console.log('Run script');
+getPage(pageBase + registerPage, 'get', null, 'register', function(status) {
+  console.log('Register status: ' + status);
+  login(function(status) {
+    console.log('Login status: ' + status);
+    run();
+  });
+});
+\end{lstlisting}

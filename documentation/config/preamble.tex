@@ -2,8 +2,17 @@
 
 \newcommand{\No}{\textnumero} % фикс для новый версий какого-то пакета
 
-\usepackage{graphicx}
-\usepackage{eskdtotal}
+\usepackage{graphicx} % графика
+\usepackage{eskdtotal} % подсчёт всякой всячины
+\usepackage{listings} % исходники
+\lstdefinestyle{sharpc}{language=[Sharp]C}
+\lstset{
+	basicstyle=\fontsize{3.5mm}{0.5em}\listingfont,
+	breaklines=true,
+	tabsize=2,
+	keepspaces=true,
+	style=sharpc
+}
 
 % ещё 2 уровня вложенности!
 \usepackage{eskdpara}
