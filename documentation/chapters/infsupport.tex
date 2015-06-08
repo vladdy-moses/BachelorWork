@@ -32,12 +32,17 @@ ER-диаграмма логической модели данных, испол
 
 Описание сущностей представлено в таблице~\ref{tab:inf-entities}.
 
-\begin{footnotesize}
+\begin{myTable}
 \begin{longtable}[h]{|p{0.3\textwidth}|p{0.6\textwidth}|}
 	\caption{\label{tab:inf-entities}Сущности логической модели данных} \\
 	\hline
 		\thead{Название сущности} &
 		\thead{Описание} \\
+	\hline
+		\theadnum{1} & \theadnum{2} \\
+	\hline \endfirsthead
+	\hline
+		\theadnum{1} & \theadnum{2} \\
 	\hline \endhead
 		Подрядчик & Сведения о подрядной организации \\ \hline
 		Предметные поля & Подробная информация о деятельности подрядчика \\ \hline
@@ -56,7 +61,7 @@ ER-диаграмма логической модели данных, испол
 		Фактический показатель & Сведения о фактическом ходе ремонта элемента дома \\ \hline
 		Показатель ремонта & Сведения о показателях элементов ремонта дома \\ \hline
 \end{longtable}
-\end{footnotesize}
+\end{myTable}
 
 Список сотрудников включён в логическую модель данных, так как содержание информации о сотрудниках каждой подрядной организации является требованием заказчика.
 Также это требование отражено в техническом задании.
@@ -67,7 +72,7 @@ ER-диаграмма логической модели данных, испол
 
 Атрибуты сущности [Подрядчик] представлены в таблице~\ref{tab:inf-contractor}.
 
-\begin{footnotesize}
+\begin{myTable}
 \begin{longtable}[h]{|p{0.3\textwidth}|p{0.2\textwidth}|p{0.4\textwidth}|}
 	\caption{\label{tab:inf-contractor}Атрибуты сущности [Подрядчик] и поля таблицы \{Contractor\}} \\
 	\hline
@@ -93,7 +98,7 @@ ER-диаграмма логической модели данных, испол
 	ФИО ответственного \par \{ResponsibleName\} & Текстовый \par \{nvarchar(200)\} & ФИО ответственного лица за участие в конкурсах \\ \hline
 	Телефон ответственного \par \{ResponsiblePhone\} & Текстовый \par \{nvarchar(50)\} & Телефон ответственного лица за участие в конкурсах \\ \hline
 \end{longtable}
-\end{footnotesize}
+\end{myTable}
 
 В данной сущности умышленно нарушается НФБК для увеличения доступа к данным.
 При процессе нормализации ФИО и Телефон ответственного можно вынести в отдельную сущность, но это усложнит схему данных информационной системы, увеличив число запросов к БД.
@@ -101,7 +106,7 @@ ER-диаграмма логической модели данных, испол
 
 Атрибуты сущности [Предметные поля] представлены в таблице~\ref{tab:inf-contractorinfo}.
 
-\begin{footnotesize}
+\begin{myTable}
 \begin{longtable}[h]{|p{0.3\textwidth}|p{0.2\textwidth}|p{0.4\textwidth}|}
 	\caption{\label{tab:inf-contractorinfo}Атрибуты сущности [Предметные поля] и поля таблицы \{ContractorInformation\}} \\
 	\hline
@@ -122,11 +127,11 @@ ER-диаграмма логической модели данных, испол
 	Данные о наличии машин и механизмов \par \{MachineryDescription\} & Текстовый \par \{nvarchar(max)\} & Данные о наличии строительной техники у подрядчика \\ \hline
 	Выполняемые работы \par \{WorkDescription\} & Текстовый \par \{nvarchar(max)\} & Сведения о работах текущих подрядчика \\ \hline
 \end{longtable}
-\end{footnotesize}
+\end{myTable}
 
 Атрибуты сущности [Портфолио] представлены в таблице~\ref{tab:inf-portfolio}.
 
-\begin{footnotesize}
+\begin{myTable}
 \begin{longtable}[h]{|p{0.3\textwidth}|p{0.2\textwidth}|p{0.4\textwidth}|}
 	\caption{\label{tab:inf-portfolio}Атрибуты сущности [Портфолио] и поля таблицы \{Portfolio\}} \\
 	\hline
@@ -145,12 +150,12 @@ ER-диаграмма логической модели данных, испол
 	Имя файла \par \{FileName\} & Текстовый \par \{nvarchar(100)\} & Имя файла с приложением в ФС \\ \hline
 	Идентификатор подрядчика \par \{OrganizationId\} & Числовой \par \{int\} & Связь с подрядчиком \\ \hline
 \end{longtable}
-\end{footnotesize}
+\end{myTable}
 
 Атрибуты сущности [Сотрудник] представлены в таблице~\ref{tab:inf-employee}.
 
-\begin{footnotesize}
-\begin{longtable}[h]{|p{0.3\textwidth}|p{0.2\textwidth}|p{0.35\textwidth}|}
+\begin{myTable}
+\begin{longtable}[h]{|p{0.3\textwidth}|p{0.2\textwidth}|p{0.4\textwidth}|}
 	\caption{\label{tab:inf-employee}Атрибуты сущности [Сотрудник] и поля таблицы \{Employee\}} \\
 	\hline
 		\thead{Название атрибута/поля} &
@@ -171,11 +176,11 @@ ER-диаграмма логической модели данных, испол
 	Идентификатор подрядчика \par \{OrganizationId\} & Числовой \par \{int\} & Связь с подрядчиком \\ \hline
 	Идентификатор должности \par \{PositionId\} & Числовой \par \{int\} & Связь с должностью сотрудника	\\ \hline
 \end{longtable}
-\end{footnotesize}
+\end{myTable}
 
 Атрибуты сущности [Должность] представлены в таблице~\ref{tab:inf-employeePosition}.
 
-\begin{footnotesize}
+\begin{myTable}
 \begin{longtable}[h]{|p{0.3\textwidth}|p{0.2\textwidth}|p{0.4\textwidth}|}
 	\caption{\label{tab:inf-employeePosition}Атрибуты сущности [Должность] и поля таблицы \{EmployeePosition\}} \\
 	\hline
@@ -193,11 +198,11 @@ ER-диаграмма логической модели данных, испол
 	Название \par \{Name\} & Текстовый \par \{nvarchar(200)\} & Название должности \\ \hline
 	Является руководящей \par \{CanBeDirector\} & Логический \par \{bit\} & Является ли должность руководящей \\ \hline
 \end{longtable}
-\end{footnotesize}
+\end{myTable}
 
 Атрибуты сущности [Дом] представлены в таблице~\ref{tab:inf-object}.
 
-\begin{footnotesize}
+\begin{myTable}
 \begin{longtable}[h]{|p{0.3\textwidth}|p{0.2\textwidth}|p{0.4\textwidth}|}
 	\caption{\label{tab:inf-object}Атрибуты сущности [Дом] и поля таблицы \{cmn\$Object\}} \\
 	\hline
@@ -214,14 +219,14 @@ ER-диаграмма логической модели данных, испол
 	Адрес \par \{StructureAddrText\} & Текстовый \par \{nvarchar(500)\} & Адрес дома \\ \hline
 	Тип \par \{ObjectType\} & Справочник \par \{int\} & Тип дома \\ \hline
 \end{longtable}
-\end{footnotesize}
+\end{myTable}
 
 В таблице выше показаны только те поля, которые необходимы для информационной системы.
 Фактически в данной таблице содержится более 15 полей.
 
 Атрибуты сущности [Конкурс] представлены в таблице~\ref{tab:inf-contest}.
 
-\begin{footnotesize}
+\begin{myTable}
 \begin{longtable}[h]{|p{0.3\textwidth}|p{0.2\textwidth}|p{0.4\textwidth}|}
 	\caption{\label{tab:inf-contest}Атрибуты сущности [Конкурс] и поля таблицы \{Contest\}} \\
 	\hline
@@ -250,11 +255,11 @@ ER-диаграмма логической модели данных, испол
 	Ожидание заключение договора \par \{ContractDaysLimit\} & Денежный \par \{money\} & Срок (указан в днях), в течение которого на разыгранный в рамках конкурса лот должен быть заключен контракт \\ \hline
 	Дата внесения изменений \par \{Updated\} & ДатаВремя \par \{datetime2(2)\} & Дата и время внесения последних изменений в сведения о конкурсе \\ \hline
 \end{longtable}
-\end{footnotesize}
+\end{myTable}
 
 Атрибуты сущности [Лот] представлены в таблице~\ref{tab:inf-lot}.
 
-\begin{footnotesize}
+\begin{myTable}
 \begin{longtable}[h]{|p{0.3\textwidth}|p{0.2\textwidth}|p{0.4\textwidth}|}
 	\caption{\label{tab:inf-lot}Атрибуты сущности [Лот] и поля таблицы \{Lot\}} \\
 	\hline
@@ -275,11 +280,11 @@ ER-диаграмма логической модели данных, испол
 	Является разыгранным \par \{Status\} & Логический \par \{bit\} & Статус розыгрыша конкурса \\ \hline
 	Идентификатор конкурса \par \{ContestId\} & Числовой \par \{int\} & Связь с конкурсом на КР \\ \hline
 \end{longtable}
-\end{footnotesize}
+\end{myTable}
 
 Атрибуты сущности [Смета] представлены в таблице~\ref{tab:inf-costEstimation}.
 
-\begin{footnotesize}
+\begin{myTable}
 \begin{longtable}[h]{|p{0.3\textwidth}|p{0.2\textwidth}|p{0.4\textwidth}|}
 	\caption{\label{tab:inf-costEstimation}Атрибуты сущности [Смета] и поля таблицы \{CostEstimation\}} \\
 	\hline
@@ -298,11 +303,11 @@ ER-диаграмма логической модели данных, испол
 	Файл обмена \par \{ChangeFileName\} & Текстовый \par \{nvarchar(100)\} & Путь до файла обмена типа АПРС 1.10 \\ \hline
 	Идентификатор дома \par \{ObjectId\} & Числовой \par \{int\} & Связь с домом \\ \hline
 \end{longtable}
-\end{footnotesize}
+\end{myTable}
 
 Атрибуты сущности [Элемент сметы] представлены в таблице~\ref{tab:inf-costEstimationElement}.
 
-\begin{footnotesize}
+\begin{myTable}
 \begin{longtable}[h]{|p{0.3\textwidth}|p{0.2\textwidth}|p{0.4\textwidth}|}
 	\caption{\label{tab:inf-costEstimationElement}Атрибуты сущности [Элемент сметы] и поля таблицы \{CostEstimationElement\}} \\
 	\hline
@@ -323,11 +328,11 @@ ER-диаграмма логической модели данных, испол
 	Элемент ремонта \par \{ElementName\} & Текстовый \par \{nvarchar(100)\} & Название вида работ по ремонту дома \\ \hline
 	Идентификатор сметы \par \{CostEstimationId\} & Числовой \par \{int\} & Связь со сметой \\ \hline
 \end{longtable}
-\end{footnotesize}
+\end{myTable}
 
 Атрибуты сущности [Заявка] представлены в таблице~\ref{tab:inf-bid}.
 
-\begin{footnotesize}
+\begin{myTable}
 \begin{longtable}[h]{|p{0.3\textwidth}|p{0.2\textwidth}|p{0.4\textwidth}|}
 	\caption{\label{tab:inf-bid}Атрибуты сущности [Заявка] и поля таблицы \{Bid\}} \\
 	\hline
@@ -349,11 +354,11 @@ ER-диаграмма логической модели данных, испол
 	Идентификатор подрядчика \par \{Organizationid\} & Числовой \par \{int\} & Связь с подрядчиком \\ \hline
 	Идентификатор лота \par \{LotId\} & Числовой \par \{int\} & Связь с лотом \\ \hline
 \end{longtable}
-\end{footnotesize}
+\end{myTable}
 
 Атрибуты сущности [Договор на КР] представлены в таблице~\ref{tab:inf-contractOnWork}.
 
-\begin{footnotesize}
+\begin{myTable}
 \begin{longtable}[h]{|p{0.3\textwidth}|p{0.2\textwidth}|p{0.4\textwidth}|}
 	\caption{\label{tab:inf-contractOnWork}Атрибуты сущности [Договор на КР] и поля таблицы \{ContractOnWork\}} \\
 	\hline
@@ -374,11 +379,11 @@ ER-диаграмма логической модели данных, испол
 	Статус \par \{StatusId\} & Справочник \par \{int\} & Статус договора на КР \\ \hline
 	Идентификатор дома \par \{ObjectId\} & Числовой \par \{int\} & Связь с домом \\ \hline
 \end{longtable}
-\end{footnotesize}
+\end{myTable}
 
 Атрибуты сущности [Элемент договора на КР] представлены в таблице~\ref{tab:inf-contractOnWorkElement}.
 
-\begin{footnotesize}
+\begin{myTable}
 \begin{longtable}[h]{|p{0.3\textwidth}|p{0.2\textwidth}|p{0.4\textwidth}|}
 	\caption{\label{tab:inf-contractOnWorkElement}Атрибуты сущности [Элемент договора на КР] и поля таблицы \{ContractOnWorkElement\}} \\
 	\hline
@@ -399,11 +404,11 @@ ER-диаграмма логической модели данных, испол
 	Акт приёмки \par \{AcceptanceReport\} & Текстовый \par \{nvarchar(100)\} & Путь до файла с отсканированном файлом приёмки работ по элементу договора \\ \hline
 	Дата проверки \par \{DateChecking\} & Дата \par \{datetime2\} & Дата проверки элемента договора \\ \hline
 \end{longtable}
-\end{footnotesize}
+\end{myTable}
 
 Атрибуты сущности [Плановый показатель] представлены в таблице~\ref{tab:inf-contractOnWorkPlan}.
 
-\begin{footnotesize}
+\begin{myTable}
 \begin{longtable}[h]{|p{0.3\textwidth}|p{0.2\textwidth}|p{0.4\textwidth}|}
 	\caption{\label{tab:inf-contractOnWorkPlan}Атрибуты сущности [Плановый показатель] и поля таблицы \{ContractOnWorkPlan\}} \\
 	\hline
@@ -419,11 +424,11 @@ ER-диаграмма логической модели данных, испол
 	Идентификатор элемента \par \{Id\} & Числовой \par \{int\} & Идентификатор элемента договора на КР \\ \hline
 	Дата согласования \par \{DateChecking\} & Дата \par \{datetime2\} & Дата согласования плана ремонта \\ \hline
 \end{longtable}
-\end{footnotesize}
+\end{myTable}
 
 Атрибуты сущности [Фактический показатель] представлены в таблице~\ref{tab:inf-contractOnWorkFact}.
 
-\begin{footnotesize}
+\begin{myTable}
 \begin{longtable}[h]{|p{0.3\textwidth}|p{0.2\textwidth}|p{0.4\textwidth}|}
 	\caption{\label{tab:inf-contractOnWorkFact}Атрибуты сущности [Фактический показатель] и поля таблицы \{ContractOnWorkFact\}} \\
 	\hline
@@ -441,11 +446,11 @@ ER-диаграмма логической модели данных, испол
 	Процент выполнения работ \par \{Completed\} & Числовой \par \{decimal(5,2)\} & Текущий прогресс выполнения ремонта \\ \hline
 	Расчёт процентов автоматический \par \{IsAutoCompleted\} & Логический \par \{bit\} & Является ли расчёт процентов автоматическим \\ \hline
 \end{longtable}
-\end{footnotesize}
+\end{myTable}
 
 Атрибуты сущности [Показатель ремонта] представлены в таблице~\ref{tab:inf-contractOnWorkPF}.
 
-\begin{footnotesize}
+\begin{myTable}
 \begin{longtable}[h]{|p{0.3\textwidth}|p{0.2\textwidth}|p{0.4\textwidth}|}
 	\caption{\label{tab:inf-contractOnWorkPF}Атрибуты сущности [Показатель ремонта] и часть полей полей таблиц \{ContractOnWorkPlan\} и \{ContractOnWorkFact\}} \\
 	\hline
@@ -463,14 +468,14 @@ ER-диаграмма логической модели данных, испол
 	Объём \par \{Volume\} & Числовой \par \{decimal(5,2)\} & Объём ремонта \\ \hline
 	Дата окончания \par \{DateEnd\} & Дата \par \{datetime2\} & Фактическая или плановая дата окончания ремонта по элементу договора \\ \hline
 \end{longtable}
-\end{footnotesize}
+\end{myTable}
 
 Сопоставленные атрибутам поля входят в таблицы {WorkPlan} и {WorkFact}.
 Создание отдельной таблицы для описания сущности [Показатель] было опущено ввиду увеличения скорости выборки данных информационной системой.
 
 Также при переводе модели от логической до физической необходимо указать поля третьей сущности связи [Лот]-[Смета]. Данные поля представлены в таблице~\ref{tab:inf-lotCostEstimationLink}.
 
-\begin{footnotesize}
+\begin{myTable}
 \begin{longtable}[h]{|p{0.3\textwidth}|p{0.2\textwidth}|p{0.4\textwidth}|}
 	\caption{\label{tab:inf-lotCostEstimationLink}Поля таблицы \{LotCostEstimationLink\}} \\
 	\hline
@@ -486,7 +491,7 @@ ER-диаграмма логической модели данных, испол
 	Идентификатор лота \par \{LotId\} & Числовой \par \{int\} & Идентификатор лота \\ \hline
 	Идентификатор сметы \par \{CostEstimationId\} & Числовой \par \{int\} & Идентификатор сметы \\ \hline
 \end{longtable}
-\end{footnotesize}
+\end{myTable}
 
 \subsubsection{Проектирование реализации}
 

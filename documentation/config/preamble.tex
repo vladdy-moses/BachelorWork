@@ -23,8 +23,12 @@
 \usepackage{longtable} 
 \usepackage{multirow}
 \usepackage{makecell} % для заголовков таблиц
-\newcommand{\theadnum}[1]{\itshape\makecell[c]{#1}}
+\newcommand{\theadnum}[1]{\makecell[c]{\footnotesize #1}}
 \renewcommand\theadfont{\bfseries}
+
+\newenvironment{myTable}
+{ \vspace{3mm}\setstretch{1.0}\begin{small} }
+{ \end{small} }
 
 % переносы
 \usepackage[russian]{babel}
@@ -39,15 +43,19 @@
 
 % шрифты
 \input{config/font}
-\usepackage[font=footnotesize]{caption}
+\usepackage[font=small]{caption}
 
 % интервалы и отступы
 \ESKDsectSkip{section}{4em}{4em}
 \ESKDsectSkip{subsection}{3em}{2em}
 \ESKDsectSkip{subsubsection}{2em}{2em}
 \setlength\parindent{1cm} 
-\renewcommand{\baselinestretch}{1.5}
 \renewcommand{\intextsep}{0pt}
+
+% межстрочные интервалы
+\usepackage{setspace}
+\setstretch{1.5}
+%\renewcommand{\baselinestretch}{1.5}
 
 % заголовки
 \ESKDsectStyle{section}{\bfseries\Large\centering\MakeUppercase}
@@ -99,6 +107,7 @@
 		\begin{minipage}[h]{\linewidth}
 			\centering
 			\includegraphics[width=#2\linewidth]{images/#3}
+			\vspace{1mm}
 			\caption{#4}
 			\label{img:#3}
 		\end{minipage}

@@ -12,8 +12,8 @@
 Для выбора необходимого языка программирования была составлена сравнительная характеристика трёх самых распространённых и динамично развивающихся языков, используемых в сети Интернет~\cite{chikagosHub,leonardTeo}.
 Результаты анализа приведены в таблице~\ref{tab:software-language}.
 
-\begin{footnotesize}
-\begin{longtable}[h]{|p{0.3\textwidth}|p{0.2\textwidth}|p{0.2\textwidth}|p{0.2\textwidth}|}
+\begin{myTable}
+\begin{longtable}[h]{|p{0.45\textwidth}|p{0.15\textwidth}|p{0.15\textwidth}|p{0.15\textwidth}|}
 	\caption{\label{tab:software-language}Сравнительных анализ языков программирования веб-ориентированных ИС} \\
 	\hline
 		\thead{Критерий} &
@@ -44,7 +44,7 @@
 	Сложность генерации отчётов & 
 	высокая & высокая & низкая \\ \hline
 \end{longtable}
-\end{footnotesize}
+\end{myTable}
 
 Сложность генерации отчётов включает сложность создания и отображения отчёта, предоставляемого пользователю.
 
@@ -55,7 +55,7 @@
 Для данного языка программирования существует несколько программных\linebreak средств: разрабатываемая корпорацией Microsoft среда разработки Visual Studio, свободная среда разработки Xamarin Studio, а также другие менее функциональные аналоги.
 Сравнительный анализ Visual Studio и Xamarin Studio представлен в таблице~\ref{tab:software-sharpide}.
 
-\begin{footnotesize}
+\begin{myTable}
 \begin{longtable}[h]{|p{0.5\textwidth}|p{0.2\textwidth}|p{0.2\textwidth}|}
 	\caption{\label{tab:software-sharpide}Сравнительный анализ средств разработки на C\#} \\
 	\hline
@@ -83,7 +83,7 @@
 	Интеграция с CVS & 
 	есть & есть \\ \hline
 \end{longtable}
-\end{footnotesize}
+\end{myTable}
 
 Как можно видеть из представленного анализа, оба инструментальных средства имеют преимущества друг перед другом.
 Но так как дизайнер модели данных и веб-форм важнее кроссплатформенности (для разработки можно установить и виртуальную машину с необходимой ОС), то для разработки было принято решение использовать Microsoft Visual Studio.
@@ -152,7 +152,7 @@
 
 Спецификация подсистемы <<АРМ подрядной организации>> представлена в таблице~\ref{tab:software-specArmContractor}.
 
-\begin{footnotesize}
+\begin{myTable}
 \begin{longtable}[h]{|p{0.3\textwidth}|p{0.6\textwidth}|}
 	\caption{\label{tab:software-specArmContractor}Спецификация подсистемы <<АРМ подрядной организации>>} \\
 	\hline
@@ -170,11 +170,11 @@
 	AIS.HM.Model & Модель данных ИС <<Объектовый учёт>>. \\ \hline
 	KendoUI & Библиотека графического интерфейса. Используется для отображение таблиц и фильтров. \\ \hline
 \end{longtable}
-\end{footnotesize}
+\end{myTable}
 
 Спецификация подсистемы <<АРМ РОКР>> представлена в таблице~\ref{tab:software-specArmOperator}.
 
-\begin{footnotesize}
+\begin{myTable}
 \begin{longtable}[h]{|p{0.3\textwidth}|p{0.6\textwidth}|}
 	\caption{\label{tab:software-specArmOperator}Спецификация подсистемы <<АРМ РОКР>>} \\
 	\hline
@@ -192,13 +192,13 @@
 	\multicolumn{2}{|c|}{\textbf{Подключаемые компоненты}} \\ \hline
 	AIS.HM.Model & Модель данных ИС <<Объектовый учёт>>. \\ \hline
 \end{longtable}
-\end{footnotesize}
+\end{myTable}
 
 \subsubsection{Программный модуль <<АРМ подрядной организации --- открытая часть>>}
 
 Спецификация модуля указана в таблице~\ref{tab:software-specArmContractorOpen}.
 
-\begin{footnotesize}
+\begin{myTable}
 \begin{longtable}[h]{|p{0.4\textwidth}|p{0.5\textwidth}|}
 	\caption{\label{tab:software-specArmContractorOpen}Спецификация модуля Open} \\
 	\hline
@@ -238,7 +238,7 @@
 	public class StatsDataItem & Элемент статистики \\ \hline
 	public class StatsHomeViewModel & Модель представления для статистики на главной странице. \\ \hline
 \end{longtable}
-\end{footnotesize}
+\end{myTable}
 
 Для каждого контроллера есть классы [имя]Filter, в котором содержатся поля для фильтрации записей, а также [имя]ViewModel, который представляет собой модель представления для страниц, формируемых при помощи соответствующего контроллера.
 
@@ -246,7 +246,7 @@
 
 Спецификация модуля указана в таблице~\ref{tab:software-specArmContractorPersonal}.
 
-\begin{footnotesize}
+\begin{myTable}
 \begin{longtable}[h]{|p{0.4\textwidth}|p{0.5\textwidth}|}
 	\caption{\label{tab:software-specArmContractorPersonal}Спецификация модуля Personal} \\
 	\hline
@@ -269,7 +269,7 @@
 	\multicolumn{2}{|c|}{\textbf{Классы для OrganizationController}} \\ \hline
 	public class FillInfo & Элемент шкалы заполненности информации на главной странице личного кабинета. \\ \hline
 \end{longtable}
-\end{footnotesize}
+\end{myTable}
 
 Для каждого контроллера есть классы [имя]Filter, в котором содержатся поля для фильтрации записей, а также [имя]ViewModel, который представляет собой модель представления для страниц, формируемых при помощи соответствующего контроллера.
 
@@ -277,7 +277,7 @@
 
 Спецификация программного модуля представлена на таблице~\ref{tab:software-specArmRokrContractorRequest}.
 
-\begin{footnotesize}
+\begin{myTable}
 \begin{longtable}[h]{|p{0.5\textwidth}|p{0.4\textwidth}|}
 	\caption{\label{tab:software-specArmRokrContractorRequest}Спецификация модуля ContractorRequest} \\
 	\hline
@@ -295,13 +295,13 @@
 	public ActionResult Edit (int? id, ContractorRequestFilterModel filter) & Отображает страницу одобрения заявки. \\ \hline
 	[HttpPost] public ActionResult Edit (int? id, ContractorRequestFilterModel filter, int? status) & Одобряет заявку подрядчика. \\ \hline
 \end{longtable}
-\end{footnotesize}
+\end{myTable}
 
 \subsubsection{Программный модуль <<АРМ РОКР --- Проведение конкурсов>>}
 
 Спецификация программного модуля представлена на таблице~\ref{tab:software-specArmRokrContest}.
 
-\begin{footnotesize}
+\begin{myTable}
 \begin{longtable}[h]{|p{0.5\textwidth}|p{0.4\textwidth}|}
 	\caption{\label{tab:software-specArmRokrContest}Спецификация модуля Contest} \\
 	\hline
@@ -322,13 +322,13 @@
 	% 2 & public ActionResult Edit (int? id, ContractorRequestFilterModel filter) & Отображает страницу одобрения заявки. \\ \hline
 	% 3 & [HttpPost] public ActionResult Edit (int? id, ContractorRequestFilterModel filter, int? status) & Одобряет заявку подрядчика. \\ \hline
 \end{longtable}
-\end{footnotesize}
+\end{myTable}
 
 \subsubsection{Программный модуль <<АРМ РОКР --- Учёт договоров на КР>>}
 
 Спецификация программного модуля представлена на таблице~\ref{tab:software-specArmRokrContractOnWork}.
 
-\begin{footnotesize}
+\begin{myTable}
 \begin{longtable}[h]{|p{0.5\textwidth}|p{0.4\textwidth}|}
 	\caption{\label{tab:software-specArmRokrContractOnWork}Спецификация модуля ContractOnWork} \\
 	\hline
@@ -357,7 +357,7 @@
 	public ActionResult EditElementPlan (ContractOnWorkFiltrerModel filter, int? id, int contractElementId, int ElementId) & Изменить элемент плановых показателей. \\ \hline
 	public ActionResult EditElementFact (ContractOnWorkFiltrerModel filter, int? id, int contractElementId, int ElementId) & Изменить элемент фактических показателей. \\ \hline
 \end{longtable}
-\end{footnotesize}
+\end{myTable}
 
 \subsection{Разработка инструментального средства тестирования}
 

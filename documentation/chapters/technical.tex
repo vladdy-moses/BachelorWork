@@ -123,7 +123,7 @@
 
 Для регистрации подрядчика необходимы следующие данные, представленные в таблице \ref{tab:tech-orgfields}.
 
-\begin{footnotesize}
+\begin{myTable}
 \begin{longtable}[h]{|p{0.5\textwidth}|p{0.2\textwidth}|p{0.2\textwidth}|}
 	\caption{\label{tab:tech-orgfields}Необходимые поля подрядной организации} \\
 	\hline
@@ -147,11 +147,11 @@
 		ОГРН & текстовый & 15 \\
 	\hline
 \end{longtable}
-\end{footnotesize}
+\end{myTable}
 
 Дополнительно могут требоваться заполнение сведений, расположенных в таблице~\ref{tab:tech-orgaddfields}.
 
-\begin{footnotesize}
+\begin{myTable}
 \begin{longtable}[h]{|p{0.5\textwidth}|p{0.2\textwidth}|p{0.2\textwidth}|}
 	\caption{\label{tab:tech-orgaddfields}Дополнительные поля подрядной организации} \\
 	\hline
@@ -185,7 +185,7 @@
 		Перечень заказчиков и адресов, на которых сейчас ведутся работы & текстовый & MAX \\
 	\hline
 \end{longtable}
-\end{footnotesize}
+\end{myTable}
 
 РОКР может одобрять или отказывать в регистрации подрядчика на портале.
 При отказе РОКР должен указать причину отказа.
@@ -197,7 +197,7 @@
 
 Список сведений о сотруднике представлен в таблице~\ref{tab:tech-employeefields}.
 
-\begin{footnotesize}
+\begin{myTable}
 \begin{longtable}[h]{|p{0.5\textwidth}|p{0.2\textwidth}|p{0.2\textwidth}|}
 	\caption{\label{tab:tech-employeefields}Сведения о сотруднике} \\
 	\hline
@@ -223,7 +223,7 @@
 		Дата освобождения от должности & дата & 6 \\
 	\hline
 \end{longtable}
-\end{footnotesize}
+\end{myTable}
 
 Должность может быть выбрана из списка должностей ранее созданных записей сотрудников, а может быть создана новая.
 При создании новой должности её название должно начинаться с заглавной буквы, в ней не должно быть двойных пробелов.
@@ -237,7 +237,7 @@
 
 Сведения о конкурсе представлены в таблице~\ref{tab:tech-contestfields}.
 
-\begin{footnotesize}
+\begin{myTable}
 \begin{longtable}[h]{|p{0.5\textwidth}|p{0.2\textwidth}|p{0.2\textwidth}|}
 	\caption{\label{tab:tech-contestfields}Сведения о конкурсе} \\
 	\hline
@@ -277,7 +277,7 @@
 		Дата внесения изменений & дата-время & 7 \\
 	\hline
 \end{longtable}
-\end{footnotesize}
+\end{myTable}
 
 Конкурс может быть создан региональным оператором капитального ремонта.
 
@@ -287,7 +287,7 @@
 На конкурс может быть прикреплено множество лотов.
 Сведения о лотах содержатся в таблице~\ref{tab:tech-lotfields}.
 
-\begin{footnotesize}
+\begin{myTable}
 \begin{longtable}[h]{|p{0.5\textwidth}|p{0.2\textwidth}|p{0.2\textwidth}|}
 	\caption{\label{tab:tech-lotfields}Сведения о лоте} \\
 	\hline
@@ -309,7 +309,7 @@
 		Является разыгранным & логический & 1 \\
 	\hline
 \end{longtable}
-\end{footnotesize}
+\end{myTable}
 
 К каждому лоту может быть прикреплено множество смет.
 Смета оформляется на конкретный объект жилого фонда и содержит список элементов капитального ремонта, которые необходимо отремонтировать в рамках данного конкурса.
@@ -348,7 +348,7 @@
 
 Список сведений в заявке представлен в таблице~\ref{tab:tech-bidfields}.
 
-\begin{footnotesize}
+\begin{myTable}
 \begin{longtable}[h]{|p{0.5\textwidth}|p{0.2\textwidth}|p{0.2\textwidth}|}
 	\caption{\label{tab:tech-bidfields}Сведения о заявке на розыгрыш лота} \\
 	\hline
@@ -366,7 +366,7 @@
 		Прикреплённый файл & бинарный & MAX \\
 	\hline
 \end{longtable}
-\end{footnotesize}
+\end{myTable}
 
 Информация об авторе заявки не должна быть видна другим участникам площадки и РОКР до даты вскрытия конвертов конкурса, на розыгрыш лота которого подавалась заявка.
 
