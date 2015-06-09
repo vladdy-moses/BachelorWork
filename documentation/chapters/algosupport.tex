@@ -40,16 +40,9 @@
 
 Логическое описание представлено на рисунке~\ref{img:algo-views}.
 
-\begin{figure}[h!]
-	\begin{center}
-		\begin{minipage}[h]{\linewidth}
-			\includegraphics[width=\linewidth]{images/algo-views.png}
-			\caption{Схема алгоритма расчёта имени представления}
-			\label{img:algo-views}
-		\end{minipage}
-		\hfill
-	\end{center}
-\end{figure}  
+\myFigure[t]{0.65}{algo-views}{Схема алгоритма расчёта имени представления}
+
+%\clearpage
 
 \subsection{Авторизация пользователя при запросе к информационной системе}
 
@@ -76,29 +69,31 @@ Cookie представляет собой определённую строку
 \subsubsection*{Логическое описание}
 
 Логическое описание представлено на рисунке~\ref{img:algo-authorize}.
+ 
+\myFigure{0.75}{algo-authorize}{Схема алгоритма авторизации}
 
-\begin{figure}[h!]
-	\begin{center}
-		\begin{minipage}[h]{\linewidth}
-			\includegraphics[width=\linewidth]{images/algo-authorize.png}
-			\caption{Схема алгоритма авторизации}
-			\label{img:algo-authorize}
-		\end{minipage}
-		\hfill
-	\end{center}
-\end{figure}  
+%\clearpage
 
 \subsection{Расчёт статуса конкурса}
 
 \subsubsection*{Общая характеристика}
 
 Для фильтрации конкурсов необходимо определить его статус.
+Статусы конкурса могут быть следующими:
+
+\begin{easylist}
+& анонс;
+& приём заявок;
+& приём заявок завершён;
+& проведение конкурса;
+& проведение конкурса завершено.
+\end{easylist}
 
 \subsubsection*{Используемые данные}
 
 Данные о дате начала приёма заявок, окончании приёма заявок, вскрытии конвертов. Эти сведения размещаются в таблице Contest.
 
-Число лотов данного конкурса из таблицы Lot, в которых заполнено поле WonBid.
+Число лотов данного конкурса из таблицы Lot, в которых заполнено поле\linebreak WonBid.
 
 \subsubsection*{Результат выполнения}
 
@@ -108,16 +103,7 @@ Cookie представляет собой определённую строку
 
 Логическое описание представлено на рисунке~\ref{img:algo-conteststatus}.
 
-\begin{figure}[h!]
-	\begin{center}
-		\begin{minipage}[h]{\linewidth}
-			\includegraphics[width=0.8\linewidth]{images/algo-conteststatus.png}
-			\caption{Схема алгоритма расчёта статуса конкурса}
-			\label{img:algo-conteststatus}
-		\end{minipage}
-		\hfill
-	\end{center}
-\end{figure} 
+\myFigure{0.9}{algo-conteststatus}{Схема алгоритма расчёта статуса конкурса}
 
 \clearpage
 \newpage

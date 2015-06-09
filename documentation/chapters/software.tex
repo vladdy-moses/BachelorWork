@@ -12,20 +12,19 @@
 Для выбора необходимого языка программирования была составлена сравнительная характеристика трёх самых распространённых и динамично развивающихся языков, используемых в сети Интернет~\cite{chikagosHub,leonardTeo}.
 Результаты анализа приведены в таблице~\ref{tab:software-language}.
 
-\begin{footnotesize}
-\begin{longtable}[h]{|p{0.3\textwidth}|p{0.2\textwidth}|p{0.2\textwidth}|p{0.2\textwidth}|}
+\begin{myTable}
+\begin{longtable}[h]{|p{0.45\textwidth}|p{0.15\textwidth}|p{0.15\textwidth}|p{0.15\textwidth}|}
 	\caption{\label{tab:software-language}Сравнительных анализ языков программирования веб-ориентированных ИС} \\
 	\hline
-		\textbf{Критерий} &
-		\textbf{PHP} &
-		\textbf{Ruby} &
-		\textbf{C\#} \\
+		\thead{Критерий} &
+		\thead{PHP} &
+		\thead{Ruby} &
+		\thead{C\#} \\
+	\hline
+		\theadnum{1} & \theadnum{2} & \theadnum{3} & \theadnum{4} \\
 	\hline \endfirsthead
 	\hline
-		\textbf{Критерий} &
-		\textbf{PHP} &
-		\textbf{Ruby} &
-		\textbf{C\#} \\
+		 \theadnum{1} & \theadnum{2} & \theadnum{3} & \theadnum{4} \\
 	\hline \endhead
 	Скорость формирования страницы & 
 	средне & медленно & быстро \\ \hline
@@ -45,7 +44,7 @@
 	Сложность генерации отчётов & 
 	высокая & высокая & низкая \\ \hline
 \end{longtable}
-\end{footnotesize}
+\end{myTable}
 
 Сложность генерации отчётов включает сложность создания и отображения отчёта, предоставляемого пользователю.
 
@@ -53,21 +52,21 @@
 Также в техническом задании указано наличие расширенной обработки исключений и отклика отчётных форм.
 На основании данных критериев, а также используемого языка при написании регионального сегмента ГИС ЖКХ, был выбран язык программирования C\# и, соответственно, платформа .NET.
 
-Для данного языка программирования существует несколько программных средств: разрабатываемая корпорацией Microsoft среда разработки Visual Studio, свободная среда разработки Xamarin Studio, а также другие менее функциональные аналоги.
+Для данного языка программирования существует несколько программных\linebreak средств: разрабатываемая корпорацией Microsoft среда разработки Visual Studio, свободная среда разработки Xamarin Studio, а также другие менее функциональные аналоги.
 Сравнительный анализ Visual Studio и Xamarin Studio представлен в таблице~\ref{tab:software-sharpide}.
 
-\begin{footnotesize}
+\begin{myTable}
 \begin{longtable}[h]{|p{0.5\textwidth}|p{0.2\textwidth}|p{0.2\textwidth}|}
 	\caption{\label{tab:software-sharpide}Сравнительный анализ средств разработки на C\#} \\
 	\hline
-		\textbf{Критерий} &
-		\textbf{Visual Studio} &
-		\textbf{Xamarin} \\
+		\thead{Критерий} &
+		\thead{Visual Studio} &
+		\thead{Xamarin} \\
+	\hline
+		\theadnum{1} & \theadnum{2} & \theadnum{3} \\
 	\hline \endfirsthead
 	\hline
-		\textbf{Критерий} &
-		\textbf{Visual Studio} &
-		\textbf{Xamarin} \\
+		 \theadnum{1} & \theadnum{2} & \theadnum{3} \\
 	\hline \endhead
 	Подсветка синтаксиса & 
 	есть & есть \\ \hline
@@ -84,7 +83,7 @@
 	Интеграция с CVS & 
 	есть & есть \\ \hline
 \end{longtable}
-\end{footnotesize}
+\end{myTable}
 
 Как можно видеть из представленного анализа, оба инструментальных средства имеют преимущества друг перед другом.
 Но так как дизайнер модели данных и веб-форм важнее кроссплатформенности (для разработки можно установить и виртуальную машину с необходимой ОС), то для разработки было принято решение использовать Microsoft Visual Studio.
@@ -146,51 +145,369 @@
 
 \subsection{Разработка прикладного программного обеспечения}
 
-Work in process.
-
 \subsubsection{Структура прикладного программного обеспечения}
 
-Work in process.
+Система состоит из двух подсистем: <<АРМ подрядной организации>>, делимый на модули открытой части и личного кабинета, и <<АРМ РОКР>>, в котором можно выделить модули отбора подрядчиков, проведения конкурсов и учёта договоров капитального ремонта.
+Данное дробление системы на подсистемы и модули было выбрано ввиду явного разделения функций системы согласно техническому заданию.
 
-\subsubsection{Программный модуль <<АРМ подрядной организации>>}
+Спецификация подсистемы <<АРМ подрядной организации>> представлена в таблице~\ref{tab:software-specArmContractor}.
 
-Work in process.
+\begin{myTable}
+\begin{longtable}[h]{|p{0.3\textwidth}|p{0.6\textwidth}|}
+	\caption{\label{tab:software-specArmContractor}Спецификация подсистемы <<АРМ подрядной организации>>} \\
+	\hline
+		\thead{Название компонента} & \thead{Описание} \\
+	\hline
+		\theadnum{1} & \theadnum{2} \\
+	\hline \endfirsthead
+	\hline
+		 \theadnum{1} & \theadnum{2} \\
+	\hline \endhead
+	\multicolumn{2}{|c|}{\textbf{Модули}} \\ \hline
+	Open & Открытая часть портала, доступная любому пользователю. \\ \hline
+	Personal & Личный кабинет подрядной организации. \\ \hline
+	\multicolumn{2}{|c|}{\textbf{Подключаемые компоненты}} \\ \hline
+	AIS.HM.Model & Модель данных ИС <<Объектовый учёт>>. \\ \hline
+	KendoUI & Библиотека графического интерфейса. Используется для отображение таблиц и фильтров. \\ \hline
+\end{longtable}
+\end{myTable}
 
-\subsubsection{Программный модуль <<АРМ регионального оператора капитального ремонта>>}
+Спецификация подсистемы <<АРМ РОКР>> представлена в таблице~\ref{tab:software-specArmOperator}.
 
-Work in process.
+\begin{myTable}
+\begin{longtable}[h]{|p{0.3\textwidth}|p{0.6\textwidth}|}
+	\caption{\label{tab:software-specArmOperator}Спецификация подсистемы <<АРМ РОКР>>} \\
+	\hline
+		\thead{Название компонента} & \thead{Описание} \\
+	\hline
+		\theadnum{1} & \theadnum{2} \\
+	\hline \endfirsthead
+	\hline
+		 \theadnum{1} & \theadnum{2} \\
+	\hline \endhead
+	\multicolumn{2}{|c|}{\textbf{Модули}} \\ \hline
+	ContractorRequest & Модуль отбора подрядчиков. \\ \hline
+	Contest & Модуль проведения конкурсов. \\ \hline
+	ContractOnWork & Модуль учёта договоров на капитальный ремонт. \\ \hline
+	\multicolumn{2}{|c|}{\textbf{Подключаемые компоненты}} \\ \hline
+	AIS.HM.Model & Модель данных ИС <<Объектовый учёт>>. \\ \hline
+\end{longtable}
+\end{myTable}
+
+\subsubsection{Программный модуль <<АРМ подрядной организации --- открытая часть>>}
+
+Спецификация модуля указана в таблице~\ref{tab:software-specArmContractorOpen}.
+
+\begin{myTable}
+\begin{longtable}[h]{|p{0.4\textwidth}|p{0.5\textwidth}|}
+	\caption{\label{tab:software-specArmContractorOpen}Спецификация модуля Open} \\
+	\hline
+		\thead{Название и тип элемента} & \thead{Описание} \\
+	\hline
+		\theadnum{1} & \theadnum{2} \\
+	\hline \endfirsthead
+	\hline
+		 \theadnum{1} & \theadnum{2} \\
+	\hline \endhead
+	\multicolumn{2}{|c|}{\textbf{Классы-контроллеры}} \\ \hline
+	public class AccountController & Содержит методы для авторизации и регистрации пользователей. \\ \hline
+	public class BidController & Содержит методы для добавления заявки на КР. \\ \hline
+	public class ContestController & Содержит методы для просмотра конкурсов. \\ \hline
+	public class ContractController & Содержит методы для просмотра договоров на КР. \\ \hline
+	public class CostEstimationController & Содержит методы для просмотра смет (планов работ). \\ \hline
+	public class HomeController & Содержит методы для отображения главных страниц и страниц с ошибкой. \\ \hline
+	public class LotController & Содержит методы для просмотра лотов. \\ \hline
+	public class OrganizationController & Содержит методы для просмотра информации о подрядчике. \\ \hline
+	public class PortfolioController & Содержит методы для просмотра портфолио подрядчика. \\ \hline
+	public class StatsController & Содержит методы формирования статистики. \\ \hline
+	\multicolumn{2}{|c|}{\textbf{Классы для авторизации}} \\ \hline
+	public class CheckFieldResult & Предоставляет результат заполнения полей при регистрации. \\ \hline
+	public class LoginModel & Содержит список полей для страницы авторизации. \\ \hline
+	public class PasswordModel & Содержит список полей для смены пароля. \\ \hline
+	public class RegisterModel & Модель данных для первого этапа регистрации. \\ \hline
+	public class RegisterSpecificModel & Модель данных для второго этапа регистрации. \\ \hline
+	public sealed class UserPrincipal & Паспорт пользователя. \\ \hline
+	public partial class UserIdentity & Идентификатор пользователя. \\ \hline
+	public class AccountMembershipService & Сервис для авторизации и регистрации пользователя. \\ \hline
+	public class FormsAuthenticationService & Сервис для аутентификации. \\ \hline
+	\multicolumn{2}{|c|}{\textbf{Классы для заявок}} \\ \hline
+	public class BidRepository & Доступ к данным для списка заявок. \\ \hline
+	\multicolumn{2}{|c|}{\textbf{Классы для смет}} \\ \hline
+	public class LotCostEstimationElement & Элемент агрегированной сметы по лоту \\ \hline
+	\multicolumn{2}{|c|}{\textbf{Классы для статистики}} \\ \hline
+	public class StatsDataItem & Элемент статистики \\ \hline
+	public class StatsHomeViewModel & Модель представления для статистики на главной странице. \\ \hline
+\end{longtable}
+\end{myTable}
+
+Для каждого контроллера есть классы [имя]Filter, в котором содержатся поля для фильтрации записей, а также [имя]ViewModel, который представляет собой модель представления для страниц, формируемых при помощи соответствующего контроллера.
+
+\subsubsection{Программный модуль <<АРМ подрядной организации --- личный кабинет>>}
+
+Спецификация модуля указана в таблице~\ref{tab:software-specArmContractorPersonal}.
+
+\begin{myTable}
+\begin{longtable}[h]{|p{0.4\textwidth}|p{0.5\textwidth}|}
+	\caption{\label{tab:software-specArmContractorPersonal}Спецификация модуля Personal} \\
+	\hline
+		\thead{Название и тип элемента} & \thead{Описание} \\
+	\hline
+		\theadnum{1} & \theadnum{2} \\
+	\hline \endfirsthead
+	\hline
+		 \theadnum{1} & \theadnum{2} \\
+	\hline \endhead
+	\multicolumn{2}{|c|}{\textbf{Классы-контроллеры}} \\ \hline
+	public class AssociationController & Содержит методы для работы с СРО. \\ \hline
+	public class BidController & Содержит методы для просмотра собственных заявок. \\ \hline
+	public class ContractActualInfoController & Содержит методы для отчётности по работам капитального ремонта. \\ \hline
+	public class ContractController & Содержит методы для работы с договорами на КР. \\ \hline
+	public class EmployeeController & Содержит методы для учёта сотрудников. \\ \hline
+	public class OrganizationController & Содержит методы для работы с информацией о подрядчике. \\ \hline
+	public class PortfolioController & Содержит методы для работы с портфолио подрядчика. \\ \hline
+	public class UserController & Содержит методы для доступа пользователей подрядчика к системе. \\ \hline
+	\multicolumn{2}{|c|}{\textbf{Классы для OrganizationController}} \\ \hline
+	public class FillInfo & Элемент шкалы заполненности информации на главной странице личного кабинета. \\ \hline
+\end{longtable}
+\end{myTable}
+
+Для каждого контроллера есть классы [имя]Filter, в котором содержатся поля для фильтрации записей, а также [имя]ViewModel, который представляет собой модель представления для страниц, формируемых при помощи соответствующего контроллера.
+
+\subsubsection{Программный модуль <<АРМ РОКР --- Отбор подрядчиков>>}
+
+Спецификация программного модуля представлена на таблице~\ref{tab:software-specArmRokrContractorRequest}.
+
+\begin{myTable}
+\begin{longtable}[h]{|p{0.5\textwidth}|p{0.4\textwidth}|}
+	\caption{\label{tab:software-specArmRokrContractorRequest}Спецификация модуля ContractorRequest} \\
+	\hline
+		\thead{Название и тип элемента} & \thead{Описание} \\
+	\hline
+		\theadnum{1} & \theadnum{2} \\
+	\hline \endfirsthead
+	\hline
+		 \theadnum{1} & \theadnum{2} \\
+	\hline \endhead
+	\multicolumn{2}{|c|}{\textbf{Классы-контроллеры}} \\ \hline
+	public class ContractorRequestController & Содержит методы для отбора подрядных организаций. \\ \hline
+	\multicolumn{2}{|c|}{\textbf{Методы класса ContractorRequestController}} \\ \hline
+	public ActionResult ListForOperator (ContractorRequestFilterModel filter) & Отображает список заявок на одобрение для РОКР. \\ \hline
+	public ActionResult Edit (int? id, ContractorRequestFilterModel filter) & Отображает страницу одобрения заявки. \\ \hline
+	[HttpPost] public ActionResult Edit (int? id, ContractorRequestFilterModel filter, int? status) & Одобряет заявку подрядчика. \\ \hline
+\end{longtable}
+\end{myTable}
+
+\subsubsection{Программный модуль <<АРМ РОКР --- Проведение конкурсов>>}
+
+Спецификация программного модуля представлена на таблице~\ref{tab:software-specArmRokrContest}.
+
+\begin{myTable}
+\begin{longtable}[h]{|p{0.5\textwidth}|p{0.4\textwidth}|}
+	\caption{\label{tab:software-specArmRokrContest}Спецификация модуля Contest} \\
+	\hline
+		\thead{Название и тип элемента} & \thead{Описание} \\
+	\hline
+		\theadnum{1} & \theadnum{2} \\
+	\hline \endfirsthead
+	\hline
+		 \theadnum{1} & \theadnum{2} \\
+	\hline \endhead
+	\multicolumn{2}{|c|}{\textbf{Классы-контроллеры}} \\ \hline
+	public class ContestController & Содержит методы для работы с конкурсами. \\ \hline
+	public class ContractorController & Содержит методы для работы с подрядчиками. \\ \hline
+	public class CostEstimationController & Содержит методы для работы с лотами и сметами. \\ \hline
+	public class BidController & Содержит методы для работы с заявками. \\ \hline
+	% \multicolumn{3}{|c|}{\textbf{Методы класса ContractorRequestController}} \\ \hline
+	% 1 & public ActionResult ListForOperator (ContractorRequestFilterModel filter) & Отображает список заявок на одобрение для РОКР. \\ \hline
+	% 2 & public ActionResult Edit (int? id, ContractorRequestFilterModel filter) & Отображает страницу одобрения заявки. \\ \hline
+	% 3 & [HttpPost] public ActionResult Edit (int? id, ContractorRequestFilterModel filter, int? status) & Одобряет заявку подрядчика. \\ \hline
+\end{longtable}
+\end{myTable}
+
+\subsubsection{Программный модуль <<АРМ РОКР --- Учёт договоров на КР>>}
+
+Спецификация программного модуля представлена на таблице~\ref{tab:software-specArmRokrContractOnWork}.
+
+\begin{myTable}
+\begin{longtable}[h]{|p{0.5\textwidth}|p{0.4\textwidth}|}
+	\caption{\label{tab:software-specArmRokrContractOnWork}Спецификация модуля ContractOnWork} \\
+	\hline
+		\thead{Название и тип элемента} & \thead{Описание} \\
+	\hline
+		\theadnum{1} & \theadnum{2} \\
+	\hline \endfirsthead
+	\hline
+		 \theadnum{1} & \theadnum{2} \\
+	\hline \endhead
+	\multicolumn{2}{|c|}{\textbf{Классы-контроллеры}} \\ \hline
+	public class ContractOnWorkController & Содержит методы для работы с договорами на КР. \\ \hline
+	\multicolumn{2}{|c|}{\textbf{Методы класса ContractOnWorkController}} \\ \hline
+	public ActionResult TotalLots (ContractOnWorkFiltrerModel filter) & Отображает список договоров на КР. \\ \hline
+	public ActionResult EditContractOnWork (ContractOnWorkFiltrerModel filter, int id, bool isEdit) & Изменяет договор на КР. \\ \hline
+	public ActionResult ContractHistoryList (ContractOnWorkFiltrerModel filter, int id) & Список истории состояний договора на КР. \\ \hline
+	public ActionResult ContractDetails (ContractOnWorkFiltrerModel filter, int id) & Подробности договора на КР. \\ \hline
+	public ActionResult ConfirmContractPlan (ContractOnWorkFiltrerModel filter, int id) & Подтвердить плановые показатели. \\ \hline
+	public ActionResult ConfirmContractFact (ContractOnWorkFiltrerModel filter, int id) & Подтвердить фактические показатели. \\ \hline
+	public ActionResult ContractWorkTypeList (ContractOnWorkFiltrerModel filter) & Список видов работ. \\ \hline
+	public ActionResult ContractWorkTypeEdit (ContractOnWorkFiltrerModel filter, int? id) & Изменение вида работ. \\ \hline
+	public ActionResult ContractWorkTypeDelete (ContractOnWorkFiltrerModel filter, int id) & Удаление вида работ. \\ \hline
+	public ActionResult ElementDetails (ContractOnWorkFiltrerModel filter, int id) & Подробности элемента договора на КР. \\ \hline
+	public ActionResult EditReportDocuments (ContractOnWorkFiltrerModel filter, int id) & Изменение отчётных документов по КР. \\ \hline
+	public ActionResult ChangeStatus (ContractOnWorkFiltrerModel filter, int id) & Смена статуса договора на КР. \\ \hline
+	public ActionResult EditElementPlan (ContractOnWorkFiltrerModel filter, int? id, int contractElementId, int ElementId) & Изменить элемент плановых показателей. \\ \hline
+	public ActionResult EditElementFact (ContractOnWorkFiltrerModel filter, int? id, int contractElementId, int ElementId) & Изменить элемент фактических показателей. \\ \hline
+\end{longtable}
+\end{myTable}
 
 \subsection{Разработка инструментального средства тестирования}
 
-Work in process.
+Было разработано приложение на основе технологии SlimerJs для реализации тестирования графического интерфейса пользователя.
 
-\subsection{Особенности реализации, эксплуатации и сопровождения системы}
+Язык программирования --- JavaScript.
 
-Work in process.
+В приложении реализована очередь ссылок, по которым программа должна зайти и сделать скриншот веб-страницы.
+Затем сниски экрана сохраняются в отдельной директории, откуда пользователь может получить к ним доступ.
+
+Исходные тексты инструментального средства тестирования указаны в приложении~\ref{app:testing}.
+
+% \subsection{Особенности реализации, эксплуатации и сопровождения системы}
+% Work in process.
 
 \subsection{Интерфейс пользователя с системой}
 
 \subsubsection{Модели и технологии взаимодействия пользователя с системой}
 
-Work in process.
+Взаимодействие с системой производится за счёт перехода пользователя по гиперссылкам, вводу текстовой информации, прикреплению файлов и нажатию на кнопки.
 
-\subsubsection{Руководство пользователя}
+Для того, чтобы попасть в определённый раздел системы, необходимо выбрать его в меню слева как ИС <<Объектовый учёт>>, где располагается АРМ РОКР, так и в ИС <<Портал подрядных организаций>>, где находится АРМ подрядной организации.
 
-\point{Требования к условиям эксплуатации}
+При выборе определённой функциональности (например, работа с конкурсами на капитальный ремонт), обычно сперва открывается страница с табличными данными, выше которых обычно содержится блок фильтров.
+Фильтры могут быть текстовыми (поле адреса, название конкурса), логическими (только конкурсы с активными лотами), списочными (заявки со статусом <<не расмотрена РОКР>>), датой (начала, окончания чего-либо) и промежутком (максимальная стоимость работ).
 
-Work in process.
+Чтобы просмотреть подробную информацию о каком-либо объекте, на странице с табличными данными необходимо либо перейти по ссылке в названии необходимого объекта, либо нажать на кнопку <<Подробнее>>, находящейся в первой ячейке строки.
 
-\point{Инсталляция и особенности работы}
+Если доступны какие-то действия над объектом, они будут отображаться либо в первой ячейке строки с таблицей этих объектов, либо над его описанием на странице подробностей.
 
-Work in process.
+Текст ошибки выводится либо около поля ввода, где были введены некорректные данные, либо вверху страницы под её заголовком в красном блоке.
 
-\point{Порядок и особенности работы}
+\subsection{Руководство пользователя}
 
-Work in process.
+\subsubsection{Требования к условиям эксплуатации}
 
-\point{Исключительные ситуации и их обработка}
+Для эксплуатации приложения требуется современная программа-браузер, например, последняя версия Google Chrome или Mozilla Firefox.
+Требования к аппаратному обеспечению следует рассчитывать из требований браузера.
 
-Work in process.
+Для использования системы можно использовать компьютеры фирмы Apple со встроенным в операционную системы Mac OS X браузером Safari.
+Система корректно отображает изображения меню на retina-дисплеях.
+
+От пользователей системы требуется опыт работы с браузерами, а именно они должны знать как переходить по ссылкам, вводить данные в поля ввода.
+Пользователи системы должны интуитивно воспринимать области нажатия страницы (то есть те места, куда можно нажать мышью или пальцем, чтобы произошло какое-либо действие).
+
+\subsubsection{Порядок и особенности работы}
+
+Ниже представлен порядок работы с системой при выполнении основных процессов работы.
+Например, не указывается порядок при заполнении сотрудников подрядчика или просмотре портфолио подрядчика региональным оператором капитального ремонта ввиду тривиальности и необязательности данных действий.
+
+\paragraph{Регистрация подрядчика}
+
+Данное действие выполняется подрядной организацией.
+
+Для регистрации своей подрядной организации на площадке, требуется в шапке сайта справа нажать на кнопку <<Регистрация подрядчиков>>.
+Также на страницу регистрации можно перейти с главной страницы гостя системы, или же система перенаправит пользователя автоматически.
+
+Регистрация подрядчика проводится в несколько этапов.
+На первом этапе следует ввести необходимую информацию об организации.
+Страница ввода обязательных полей изображена на рисунке~\ref{img:software-contractorRegistration}.
+Кнопка регистрации не будет активна, пока не будут введены значения во все поля на экранной форме.
+Некоторые поля могут проверяться на сервере на наличие дублей или же на иные условия.
+Для успешного продолжения регистрации в эти поля должны быть введены корректные данные, иначе возникнет всплывающее сообщение, указывающее на ошибку.
+
+\myFigure{1.0}{software-contractorRegistration}{Страница заполнения основной информации при регистрации подрядчика}
+
+После заполнения основной информации можно заполнить сведения о руководителе, членстве в СРО, заполнить графическое портфолио.
+
+\paragraph{Подача заявки на одобрение РОКР}
+
+Данное действие выполняется подрядной организацией.
+
+Для того, чтобы подать заявку на одобрение подрядной организации региональным оператором капитального ремонта, следует зайти в личный кабинет (соответствующая ссылка в шапке сайта), перейти в меню второго уровня <<Заявки в РОКР>> и нажать на кнопку <<Подать заявку>>.
+Схематично этот процесс показан на рисунке~\ref{img:software-contractorRequest}.
+
+\myFigure{1.0}{software-contractorRequest}{Процесс подачи заявки на одобрение РОКР}
+
+\paragraph{Участие в розыгрыше}
+
+Данное действие выполняется подрядной организацией.
+
+Для того, чтобы принять участие в конкусе, необходимо получить одобрение от РОКР в участии на площадке.
+
+Сперва следует зайти на страницу со списком конкурсов и выбрать необходимый конкурс со статусом <<Приём заявок>>.
+Затем следует отобразить подробности конкурса, нажав на его названии.
+Напротив необходимого лота есть кнопка со знаком <<+>>, либо же в подробностях лота есть кнопка <<Подать заявку>>.
+При нажатии на одну из этих кнопок откроется страница подачи заявки на участие в розыгрыше права выпронять капитальный ремонт.
+Примерное изображение страницы подачи заявки представлено на рисунке~\ref{img:software-contractorBid}.
+
+\myFigure{1.0}{software-contractorBid}{Страница подачи заявки на розыгрыш права проводить капитальный ремонт}
+
+\paragraph{Одобрение подрядчика}
+
+Данное действие выполняется региональным оператором капитального ремонта.
+
+Для одобрения подрядной организации следует в меню <<Подрядчики>> перейти к странице <<Отбор подрядчиков>>.
+На ней следует изменить необходимую заявку.
+Для упрощения отображения можно использовать фильтр по статусу или организации.
+На появившейся странице следует ввести статус заявки и комментарий, если она отклонена.
+Изображение страницы изменения статуса заявки представлено на рисунке~\ref{img:software-hmRequest}.
+
+\myFigure{1.0}{software-hmRequest}{Страница одобрения заявки подрядчика}
+
+Также при изменении заявки у подрядчика в личном кабинете появится уведомление об изменении статуса заявки на одобрение.
+Пример уведомления об одобрении подрядчика показан на рисунке~\ref{img:software-contractorRequestNotify}.
+
+\myFigure{0.8}{software-contractorRequestNotify}{Уведомление об одобрении подрядчика}
+
+\paragraph{Создание конкурса}
+
+Данное действие выполняется региональным оператором капитального ремонта.
+
+Для создания конкурса необходимо сперва создать запись о планах работ (сметах).
+Следует зайти в меню <<Справочники>>, где в блоке <<Подрядчики>> перейти по ссылке <<Сметы>>.
+После добавления необходимых данных откроется страница с подробностями информации о созданной смете.
+На этой странице необходимо указать виды работ по смете.
+
+После описания смет и видов работ по ним можно приступать к созданию конкурса.
+Для этого в меню <<Подрядчики>> следует перейти на страницу <<Конкурсы>>.
+После нажатия на кнопку <<Добавить конкурс>> откроется необходимая страница.
+При верном вводе данных откроется страница подробностей конкурса, где можно создать необходимые лоты.
+После создания лотов на странице их подробностей необходимо нажать на кнопку <<Прикрепить смету>> для добавления к лоту созданных ранее смет.
+
+После прикрепления необходимых смет к лотам следует отобразить лоты и конкурсы на площадке подрядчиков.
+Это можно сделать со страниц списка конкурсов (для конкурса) и подробностей конкурса (для лотов).
+
+%\paragraph{Розыгрыш конкурса}
+%Данное действие выполняется региональным оператором капитального ремонта.
+%Для розыгрыша конкурса необходимо перейти на страницу подробностей конкурса.
+
+\subsubsection{Исключительные ситуации и их обработка}
+
+Система обрабатывает исключения трёх видов:
+
+\begin{easylist}
+& запрос пользователя ведёт на несуществующий маршрут приложения;
+& запрос пользователя содержит данные, при которых возникла ошибка исполнения;
+& запрос пользователя не проходит проверку веб-сервера (например, большой объём передаваемых данных или нарушение политики безопасности).
+\end{easylist}
+
+Для первого типа предусмотрена страница с текстом о том, что запрашиваемая страница не найдена.
+На площадке подрядчиков вид такой страницы представлен на рисунке~\ref{img:software-contractorNotFound}.
+
+\myFigure{0.97}{software-contractorNotFound}{Страница при неправильной ссылке на площадке подрядчиков}
+
+Второй и третий вид исключительных ситуаций могут либо выдавать блок с ошибкой в верхней части основной области страницы (как на рисунке~\ref{img:software-contractorErrorTop}) или отображать специальную страницу с ошибкой (как на рисунке~\ref{img:software-contractorErrorAll}).
+
+\myFigure{1.0}{software-contractorErrorTop}{Блок ошибки на площадке подрядчиков}
+
+\myFigure{1.0}{software-contractorErrorAll}{Страница ошибки на площадке подрядчиков}
 
 \clearpage
 \newpage

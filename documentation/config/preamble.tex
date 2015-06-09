@@ -1,81 +1,116 @@
 \documentclass[a4paper,utf8]{eskdtext}
 
-\newcommand{\No}{\textnumero}
+\newcommand{\No}{\textnumero} % фикс для новый версий какого-то пакета
 
-\usepackage{graphicx} 
+\usepackage{graphicx} % графика
+\usepackage{eskdtotal} % подсчёт всякой всячины
+\usepackage{listings} % исходники
+\lstdefinestyle{sharpc}{language=[Sharp]C}
+\lstset{
+	basicstyle=\fontsize{3.5mm}{0.5em}\listingfont,
+	breaklines=true,
+	tabsize=2,
+	keepspaces=true,
+	style=sharpc
+}
+
+% ещё 2 уровня вложенности!
+\usepackage{eskdpara}
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{5}
 
 % таблицы
 \usepackage{longtable} 
 \usepackage{multirow}
 \usepackage{makecell} % для заголовков таблиц
-\newcommand{\theadnum}[1]{\makecell[c]{\footnotesize#1}}
+\newcommand{\theadnum}[1]{\makecell[c]{\footnotesize #1}}
 \renewcommand\theadfont{\bfseries}
 
+\newenvironment{myTable}
+{ \vspace{3mm}\setstretch{1.0}\begin{small} }
+{ \end{small} }
+
 % переносы
-%\usepackage[T2A]{fontenc}
 \usepackage[russian]{babel}
-
-% борьба с "переносами" английских слов
-%\usepackage{ucharclasses}
-% \usepackage{microtype} % better management of overfulls
-% \setTransitionsForLatin{\begingroup\hyphenrules{english}}{\endgroup}
-
+\hyphenation{УлГТУ}
 \usepackage{xecyr}
+
+% другое для текста
 \usepackage{textcase} % для uppercase
 \usepackage{amssymb,amsfonts,amsmath,amsthm} % математика
 \usepackage{enumerate} % перечислялки
 \usepackage{pdfpages} % для подключения pdf
+
+% шрифты
 \input{config/font}
+\usepackage[font=small]{caption}
 
+% интервалы и отступы
+\ESKDsectSkip{section}{4em}{4em}
+\ESKDsectSkip{subsection}{3em}{2em}
+\ESKDsectSkip{subsubsection}{2em}{2em}
+\setlength\parindent{1.27cm}
+\setlength{\ESKDexplanIndent}{-25pt} % фикс для описания формул
+\renewcommand{\intextsep}{0pt}
 
-% отступы
-% \ESKDsectSkip{section}{4em}{4em}
-% \ESKDsectSkip{subsection}{3em}{2em}
+% межстрочные интервалы
+\usepackage{setspace}
+\setstretch{1.5}
+%\renewcommand{\baselinestretch}{1.5}
 
+% заголовки
 \ESKDsectStyle{section}{\bfseries\Large\centering\MakeUppercase}
 
-% lists
-\usepackage[ampersand]{easylist}
-\ListProperties(Hide=100, Hang=true, Progressive=1.5cm, Style*=-- , Style2*=$\bullet$, Style3*=$\circ$, Style4*=\tiny$\blacksquare$ )
+%\usepackage{ulem} % для умных подчёркиваний
 
-\usepackage{ulem} % для умных подчёркиваний
+% некоторые графы рамки
+\ESKDdepartment{МИНИСТЕРСТВО ОБРАЗОВАНИЯ И НАУКИ РОССИЙСКОЙ ФЕДЕРАЦИИ}
+\ESKDcompany{федеральное государственное образовательное учреждение высшего профессионального образования \\ 
+Ульяновский Государственный Технический Университет}
+\ESKDdocName{Пояснительная записка} % (графа 1)
+\ESKDauthor{\AuthorName}
+\author{\AuthorName}
+\ESKDchecker{\ManagerName}
+%\renewcommand{\ESKDcolumnXfIVname}{Реценз.}
+%\ESKDcolumnXIfIV{\ReviewerName}
+\ESKDapprovedBy{\ControllerName}
+\ESKDnormContr{\NormControllerName}
+\ESKDletter{У}{Р}{} % учебный реальный (графа 4)
+\ESKDgroup{\AuthorGroup} % учебная граппа (графа 9)
+\ESKDsignature{\WorkNumber~ПЗ} % обозначение документа (по п.6.1.1) 
+\ESKDdefaultTitleStyle{empty}
+\renewcommand{\ESKDtheTitleFieldX}{Ульяновск, 2015}
 
 % информация о работе
 \input{config/info}
 
-\ESKDdepartment{МИНИСТЕРСТВО ОБРАЗОВАНИЯ И НАУКИ РОССИЙСКОЙ ФЕДЕРАЦИИ}
-\ESKDcompany{федеральное государственное образовательное учреждение высшего профессионального образования \\ 
-Ульяновский Государственный Технический Университет}
-
-\ESKDdocName{Пояснительная записка} % (графа 1)
-
-% графы 11
-\ESKDauthor{\AuthorName}
-\author{\AuthorName}
-\ESKDchecker{\ManagerName}
-\renewcommand{\ESKDcolumnXfIVname}{Реценз.}
-\ESKDcolumnXIfIV{\ReviewerName}
-\ESKDapprovedBy{\ControllerName}
-\ESKDnormContr{\NormControllerName}
-
-\ESKDletter{У}{Р}{} % учебный реальный (графа 4)
-\ESKDgroup{\AuthorGroup} % учебная граппа (графа 9)
-\ESKDsignature{\WorkNumber~ПЗ} % обозначение документа (по п.6.1.1) 
-
-\ESKDdefaultTitleStyle{empty}
-
-\renewcommand{\ESKDtheTitleFieldX}{Ульяновск, 2015}
-
-% списочки
+% списки
 \usepackage[shortlabels]{enumitem}
-\setlist[enumerate]{nosep}
-%\setlist[enumerate]{nosep,label=-}
+\setlist[enumerate]{nosep,leftmargin=2cm}
 \AddEnumerateCounter{\Asbuk}{\@Asbuk}{\CYRM}
 \AddEnumerateCounter{\asbuk}{\@asbuk}{\cyrm}
-% \let\oldenumerate\enumerate
-% \renewcommand{\enumerate}{
-  % \oldenumerate
-  % \setlength{\itemsep}{1pt}
-  % \setlength{\parskip}{0pt}
-  % \setlength{\parsep}{0pt}
-% }
+
+\newlength{\wideitemsep}
+\setlength{\wideitemsep}{1.5\itemsep}
+\let\olditem\item
+\renewcommand{\item}{\setlength{\parsep}{100pt}\olditem} % ???
+
+% ещё немного списков
+\usepackage[ampersand]{easylist}
+\ListProperties(Hide=100, Hang=true, Progressive=1.27cm, Style*=-- , Style2*=$\bullet$, Style3*=$\circ$, Style4*=\tiny$\blacksquare$ )
+
+% рисунки
+\usepackage{flafter}% помещает флоат ПОСЛЕ первой ссылки на него
+
+\newcommand{\myFigure}[5][h!]{
+	\begin{figure}[#1]
+		\vspace{2em}
+		\begin{minipage}[h]{\linewidth}
+			\centering
+			\includegraphics[width=#2\linewidth]{images/#3}
+			\vspace{1mm}
+			\caption{#4}
+			\label{img:#3}
+		\end{minipage}
+	\end{figure}  
+}
