@@ -1,4 +1,4 @@
-\documentclass[a4paper,utf8]{eskdtext}
+﻿\documentclass[a4paper,utf8]{eskdtext}
 
 \newcommand{\No}{\textnumero} % фикс для новый версий какого-то пакета
 
@@ -16,8 +16,17 @@
 
 % ещё 2 уровня вложенности!
 \usepackage{eskdpara}
+\usepackage{tocloft}
 \setcounter{secnumdepth}{5}
 \setcounter{tocdepth}{5}
+
+% кое-что с содержанием
+\renewcommand{\cfttoctitlefont}{\hfil \bfseries\Large\MakeUppercase}
+\renewcommand{\cftaftertoctitle}{\thispagestyle{empty}}
+\cftsetindents{section}{0.5in}{0.25in}
+\cftsetindents{subsection}{1.0in}{0.3in}
+\cftsetindents{subsubsection}{1.5in}{0.5in}
+\cftsetindents{paragraph}{2.0in}{0.7in}
 
 % таблицы
 \usepackage{longtable} 
@@ -73,7 +82,7 @@
 \ESKDchecker{\ManagerName}
 %\renewcommand{\ESKDcolumnXfIVname}{Реценз.}
 %\ESKDcolumnXIfIV{\ReviewerName}
-\ESKDapprovedBy{\ControllerName}
+%\ESKDapprovedBy{\ControllerName}
 \ESKDnormContr{\NormControllerName}
 \ESKDletter{У}{Р}{} % учебный реальный (графа 4)
 \ESKDgroup{\AuthorGroup} % учебная граппа (графа 9)
